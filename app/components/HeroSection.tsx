@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 interface HeroSectionProps {
   title: string;
@@ -8,77 +7,89 @@ interface HeroSectionProps {
 
 export default function HeroSection({ title, description, author }: HeroSectionProps) {
   return (
-    <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-white via-blue-50 to-red-50 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-blue-200 animate-pulse"></div>
-        <div className="absolute top-32 right-20 w-24 h-24 rounded-full bg-blue-300 animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/3 w-40 h-40 rounded-full bg-blue-100 animate-pulse delay-2000"></div>
-      </div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-red-200 bob"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 rounded-full bg-blue-200 bob" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 rounded-full bg-green-200 bob" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 right-1/4 w-16 h-16 rounded-full bg-yellow-200 bob" style={{animationDelay: '3s'}}></div>
+        </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Content */}
-          <div className="text-white">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <span className="text-sm font-medium">🏆 Alabama's Premier Fishing Community</span>
+          <div className="text-gray-800">
+            <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 shadow-lg border border-gray-200">
+              <span className="text-xs md:text-sm font-medium text-alabama-red">🏆 Alabama&apos;s Premier Fishing Community</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 font-heading leading-tight text-gray-900">
               {title}
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-8 text-blue-100 font-body leading-relaxed">
+            <p className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-700 font-body leading-relaxed">
               {description}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="bg-white text-blue-900 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg">
-                Explore Latest Catches
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+              <button className="bg-alabama-red text-white hover:bg-red-800 font-semibold py-3 px-6 md:px-8 rounded-lg transition-colors duration-300 shadow-lg text-sm md:text-base whitespace-nowrap">
+                Join Our Community
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
-                Join Tournament
+              <button className="border-2 border-alabama-red text-alabama-red hover:bg-alabama-red hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-colors duration-300 text-sm md:text-base whitespace-nowrap">
+                Read Our Blog
               </button>
             </div>
             
-            <div className="flex items-center text-blue-200">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                <span className="text-white text-sm font-bold">BT</span>
+            <div className="flex items-center text-gray-600">
+              <div className="w-10 h-10 bg-alabama-red rounded-full flex items-center justify-center mr-3">
+                <span className="text-white text-sm font-bold">BB</span>
               </div>
               <div>
                 <p className="text-sm font-medium">Featured by</p>
-                <p className="font-semibold">{author}</p>
+                <p className="font-semibold text-gray-800">{author}</p>
               </div>
             </div>
           </div>
           
-          {/* Hero Image/Visual */}
+          {/* Community Features */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-8 h-96 flex items-center justify-center shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-100 to-red-100 rounded-2xl p-8 h-96 flex items-center justify-center shadow-2xl relative overflow-hidden border border-gray-200">
               <img 
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop&crop=center" 
-                alt="Lake Guntersville fishing scene" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60"
+                src="https://vikingfleet.com/wp-content/uploads/sites/4649/2021/11/2024-11-14-Coxes-1.jpg?resize=360%2C240&zoom=2" 
+                alt="Alabama fishing community" 
+                className="absolute inset-0 w-full h-full object-cover opacity-40 rounded-2xl"
               />
-              <div className="relative z-10 text-white text-center">
-                <div className="text-6xl mb-4">🎣</div>
-                <h3 className="text-2xl font-bold mb-2">Lake Guntersville</h3>
-                <p className="text-blue-100">Alabama's Premier Bass Fishing Destination</p>
+              <div className="relative z-10 text-gray-800 text-center">
+                <div className="text-6xl mb-4 bob">🎣</div>
+                <h3 className="text-2xl font-bold mb-2">Join Our Community</h3>
+                <p className="text-gray-700 mb-4">Share stories, tips, and connect with fellow anglers</p>
+                <div className="flex justify-center space-x-4 text-sm">
+                  <span className="bg-white/80 px-3 py-1 rounded-full">📸 Photo Sharing</span>
+                  <span className="bg-white/80 px-3 py-1 rounded-full">💬 Forums</span>
+                </div>
               </div>
             </div>
             
-            {/* Floating stats - hidden on mobile to prevent overflow */}
-            <div className="hidden md:block absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg">
+            {/* Community stats - hidden on mobile to prevent overflow */}
+            <div className="hidden md:block absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg border-2 border-alabama-red">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-900">8.6</div>
-                <div className="text-sm text-gray-600">Largest Catch</div>
+                <div className="text-2xl font-bold text-alabama-red">2.5K+</div>
+                <div className="text-sm text-gray-600">Active Members</div>
               </div>
             </div>
             
-            <div className="hidden md:block absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-lg">
+            <div className="hidden md:block absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-lg border-2 border-community-blue">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-900">127</div>
-                <div className="text-sm text-gray-600">Tournaments</div>
+                <div className="text-2xl font-bold text-community-blue">150+</div>
+                <div className="text-sm text-gray-600">Blog Posts</div>
+              </div>
+            </div>
+            
+            <div className="hidden lg:block absolute top-1/2 -left-8 bg-white rounded-xl p-3 shadow-lg border-2 border-lake-green">
+              <div className="text-center">
+                <div className="text-lg font-bold text-lake-green">50+</div>
+                <div className="text-xs text-gray-600">Lakes Covered</div>
               </div>
             </div>
           </div>

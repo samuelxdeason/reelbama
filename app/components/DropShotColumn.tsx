@@ -12,44 +12,53 @@ interface DropShotColumnProps {
 
 export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-blue-50">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-center mb-12">
-          <div className="text-4xl mr-4">🎣</div>
-          <h2 className="text-4xl font-bold text-blue-900 font-serif">{title}</h2>
+    <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
+      <div className="flex items-center mb-6 md:mb-8">
+        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blog-accent to-purple-800 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
+          <span className="text-xl md:text-2xl">📝</span>
         </div>
-        
-        <div className="max-w-2xl mx-auto">
-          {posts.map((post, index) => (
-            <article key={index} className="bg-white rounded-xl p-8 shadow-lg border border-blue-100">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-2xl">🎣</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-blue-900">{post.title}</h3>
-                  <p className="text-gray-600">By {post.author}</p>
-                  <p className="text-sm text-blue-600">{post.date}</p>
-                </div>
-              </div>
-              
-              <div className="prose prose-lg max-w-none">
-                <div className="text-gray-700 leading-relaxed">
-                  <h4 className="text-xl font-semibold mb-3 text-blue-800">Drop-shotting Done Right</h4>
-                  <p>
-                    If you've ever wondered why your drop-shot rig isn't getting bites, it might be your leader length...
-                  </p>
-                </div>
-              </div>
-              
-              <div className="mt-6 pt-6 border-t border-blue-100">
-                <button className="text-blue-600 hover:text-blue-800 font-medium">
-                  Read Full Article →
-                </button>
-              </div>
-            </article>
-          ))}
+        <div className="min-w-0">
+          <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
+          <p className="text-gray-600 text-xs md:text-sm">Expert tips and techniques from our fishing columnists</p>
         </div>
+      </div>
+      
+      <div className="space-y-4 md:space-y-6">
+        {posts.map((post, index) => (
+          <article key={index} className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg border border-gray-200 hover:shadow-xl hover:border-blog-accent transition-all duration-300">
+            <div className="flex items-start gap-3 mb-3 md:mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blog-accent to-purple-800 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                <span className="text-white text-base md:text-lg">🎣</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1 break-words">{post.title}</h3>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                  <p className="text-gray-600 text-xs md:text-sm">By {post.author}</p>
+                  <span className="hidden sm:inline text-gray-400">•</span>
+                  <p className="text-xs text-blog-accent font-medium">{post.date}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mb-3 md:mb-4">
+              <div className="text-gray-700 leading-relaxed">
+                <h4 className="text-sm md:text-lg font-semibold mb-2 text-gray-900">Drop-shotting Done Right</h4>
+                <p className="text-xs md:text-base text-gray-600 line-clamp-3">
+                  If you&apos;ve ever wondered why your drop-shot rig isn&apos;t getting bites, it might be your leader length...
+                </p>
+              </div>
+            </div>
+            
+            <div className="pt-3 md:pt-4 border-t border-gray-200">
+              <button className="text-blog-accent hover:text-purple-900 font-medium flex items-center text-xs md:text-sm transition-colors duration-300">
+                Read Full Article
+                <svg className="ml-1 h-3 w-3 md:h-4 md:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

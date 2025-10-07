@@ -1,15 +1,39 @@
 @import "tailwindcss";
 
 :root {
+  /* Light mode base colors */
   --background: #ffffff;
-  --foreground: #1f2937;
-  --primary-blue: #2563eb;
-  --secondary-blue: #1e40af;
-  --accent-blue: #3b82f6;
-  --warm-tan: #fef3c7;
-  --green-accent: #059669;
-  --orange-accent: #ea580c;
-  --yellow-accent: #d97706;
+  --background-secondary: #f8fafc;
+  --background-tertiary: #f1f5f9;
+  --foreground: #1e293b;
+  --foreground-secondary: #475569;
+  --foreground-muted: #64748b;
+  
+  /* Alabama Crimson - Primary brand color */
+  --alabama-crimson: #9E1B32;
+  --alabama-crimson-light: #C41E3A;
+  --alabama-crimson-dark: #7A1526;
+  --alabama-crimson-darker: #5C101C;
+  
+  /* Fishing-themed complementary colors */
+  --deep-blue: #1e40af;      /* Deep water blue */
+  --lake-green: #059669;     /* Lake water green */
+  --sunset-orange: #ea580c;  /* Sunset over water */
+  --sand-tan: #d97706;       /* Beach/sand color */
+  --gold-accent: #f59e0b;    /* Gold accents */
+  --silver-accent: #6b7280;  /* Fishing line silver */
+  
+  /* Light mode specific */
+  --border-color: #e2e8f0;
+  --border-color-light: #cbd5e1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --hover-bg: #f8fafc;
+  
+  /* Community and blog specific colors */
+  --blog-accent: #7c3aed;    /* Purple for blog highlights */
+  --community-blue: #0ea5e9; /* Blue for community features */
+  --success-green: #10b981;  /* Success/positive actions */
 }
 
 @theme inline {
@@ -25,6 +49,71 @@ body {
   font-family: var(--font-lora), Georgia, serif;
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Fishing-themed utility classes */
+.bg-alabama-red {
+  background-color: var(--alabama-crimson);
+}
+
+.text-alabama-red {
+  color: var(--alabama-crimson);
+}
+
+.border-alabama-red {
+  border-color: var(--alabama-crimson);
+}
+
+.bg-deep-blue {
+  background-color: var(--deep-blue);
+}
+
+.text-deep-blue {
+  color: var(--deep-blue);
+}
+
+.bg-lake-green {
+  background-color: var(--lake-green);
+}
+
+.text-lake-green {
+  color: var(--lake-green);
+}
+
+.bg-sunset-orange {
+  background-color: var(--sunset-orange);
+}
+
+.text-sunset-orange {
+  color: var(--sunset-orange);
+}
+
+.bg-blog-accent {
+  background-color: var(--blog-accent);
+}
+
+.text-blog-accent {
+  color: var(--blog-accent);
+}
+
+.bg-community-blue {
+  background-color: var(--community-blue);
+}
+
+.text-community-blue {
+  color: var(--community-blue);
+}
+
+/* Dark mode enhancements */
+.dark-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px var(--shadow-color);
+}
+
+.dark-card:hover {
+  background: var(--hover-bg);
+  border-color: var(--border-color-light);
 }
 
 /* Ensure no elements cause horizontal overflow */
@@ -74,6 +163,53 @@ body {
 
 .ripple {
   animation: ripple 2s infinite;
+}
+
+/* Fishing bobber float animation */
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bob {
+  animation: bob 3s ease-in-out infinite;
+}
+
+/* Fishing line cast animation */
+@keyframes cast {
+  0% {
+    transform: translateX(-100%) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.cast {
+  animation: cast 4s ease-in-out infinite;
+}
+
+/* Community pulse animation */
+@keyframes community-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+  }
+}
+
+.community-pulse {
+  animation: community-pulse 2s infinite;
 }
 
 /* Smooth scrolling */

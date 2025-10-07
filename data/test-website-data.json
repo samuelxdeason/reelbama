@@ -2,7 +2,7 @@
     "site": {
       "title": "ReelBama",
       "description": "Your one-stop hub for fishing stories, tournaments, and weekly catches across Alabama waters.",
-      "author": "Captain Billy 'Bass' Thompson",
+      "author": "Bryan Brasher",
       "logoUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop&crop=center",
       "themeColor": "#1E3A8A"
     },
@@ -12,19 +12,43 @@
         "title": "Catch of the Week",
         "items": [
           {
-            "angler": "Tommy Rivers",
-            "fish": "Largemouth Bass",
-            "weightLbs": 8.6,
+            "angler": "Macy Lipford",
+            "fish": "Huge Fish",
+            "weightLbs": 12.8,
             "location": "Lake Guntersville",
-            "photoUrl": "/assets/catch-of-the-week/macy.jpeg",
+            "photoUrl": "https://scontent-atl3-3.xx.fbcdn.net/v/t1.6435-9/162885609_10222133539384870_2041599270819857716_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=SAasJ0s5fT4Q7kNvwGsORw-&_nc_oc=Admg4Y7qcnlZLH_l81RLQFB9kTjz4ulguH0v8AcEclmLqKlVr2FMSWB4xK1uBi0ZFAA&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=rL9I4cucZ5L_WZ9xX9H9fA&oh=00_Afch2jfBEG7iujeh6kpjgDVxqu-g1a3_7tjiph2L2e4ogg&oe=690CE547",
             "dateCaught": "2025-10-03"
           },
           {
-            "angler": "Lisa Grant",
+            "angler": "Thomas Grant",
             "fish": "Spotted Bass",
             "weightLbs": 7.9,
             "location": "Pickwick Lake",
             "photoUrl": "https://media.istockphoto.com/id/157405580/photo/happy-fisherman.jpg?s=612x612&w=0&k=20&c=OBMNKvMwbBOetigJj1LWOCtRyeiFlKZLhWu76EUvq-0=",
+            "dateCaught": "2025-10-02"
+          },
+          {
+            "angler": "Logan Bryan",
+            "fish": "Catfish",
+            "weightLbs": 0.8,
+            "location": "Lake Guntersville",
+            "photoUrl": "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/495231505_668016052874850_2195279165991529641_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=uVKdO8N3OqsQ7kNvwHfpbA5&_nc_oc=AdleyO-M1bY9cmop1KEUbcgeVJSI7-S037LAOgHSSFTJAwBmU_2v6oqpRnKuSrUnHW4&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=G-oSEZva1uaxJ2Ur7nofXA&oh=00_AffbhEpE4GEDZWOUJJd2o75PUzx7rWg45MMoxYaOX6Nk0g&oe=68EB2305",
+            "dateCaught": "2025-10-03"
+          },
+          {
+            "angler": "Bob Marley",
+            "fish": "Crappie",
+            "weightLbs": 7.9,
+            "location": "Pickwick Lake",
+            "photoUrl": "https://cdn7.dissolve.com/p/D145_188_429/D145_188_429_1200.jpg",
+            "dateCaught": "2025-10-02"
+          }, 
+          {
+            "angler": "Jane Doe",
+            "fish": "Crappie",
+            "weightLbs": 7.9,
+            "location": "Pickwick Lake",
+            "photoUrl": "https://www.saltminded.com/wp-content/uploads/2015/08/IMG_6831.jpg",
             "dateCaught": "2025-10-02"
           }
         ]
@@ -54,9 +78,9 @@
         "title": "Road Trip of the Month",
         "article": {
           "title": "Exploring the Black Warrior River",
-          "author": "Billy Thompson",
+          "author": "Bryan Brasher",
           "publishedDate": "2025-09-30",
-          "heroImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop&crop=center",
+          "heroImage": "https://www.americanrivers.org/wp-content/uploads/2022/12/Black-Warrior-River-credit-david-smith-flickrcc.jpg",
           "markdown": "## A Hidden Gem\nThe Black Warrior River offers pristine fishing spots, cozy camping, and plenty of smallmouth bass waiting to bite. Here's our full trip log and recommendations..."
         }
       },
@@ -66,14 +90,14 @@
         "episodes": [
           {
             "title": "Episode 12: Topwater Tricks for Fall Bass",
-            "host": "Billy Thompson",
+            "host": "Bryan Brasher",
             "guest": "Scott Martin",
             "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
             "date": "2025-09-25"
           },
           {
             "title": "Episode 11: The Science Behind Spinnerbaits",
-            "host": "Billy Thompson",
+            "host": "Bryan Brasher",
             "guest": "Dr. Emily Rhodes",
             "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
             "date": "2025-09-18"
@@ -126,8 +150,8 @@
         "title": "Photo of the Week",
         "photo": {
           "caption": "Sunset over Weiss Lake — October 2025",
-          "photographer": "Mason Clay",
-          "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center"
+          "photographer": "Sabrina Carpenter",
+          "url": "https://fishalabama.org/wp-content/uploads/2020/06/image2-32.jpeg"
         }
       },
       {
@@ -171,6 +195,84 @@
             "date": "2025-11-05",
             "title": "Winter Prep Workshop",
             "location": "Tuscaloosa Civic Center"
+          }
+        ]
+      },
+      {
+        "id": "fishingConditions",
+        "title": "Fishing Conditions",
+        "weather": [
+          {
+            "location": "Lake Guntersville",
+            "temperature": 72,
+            "condition": "Partly Cloudy",
+            "windSpeed": 8,
+            "windDirection": "NW",
+            "pressure": 30.15,
+            "humidity": 65
+          },
+          {
+            "location": "Pickwick Lake",
+            "temperature": 68,
+            "condition": "Sunny",
+            "windSpeed": 5,
+            "windDirection": "SW",
+            "pressure": 30.22,
+            "humidity": 58
+          }
+        ],
+        "lakeConditions": [
+          {
+            "lake": "Lake Guntersville",
+            "waterTemp": 68,
+            "waterLevel": "Normal",
+            "clarity": "Clear (6-8 ft)",
+            "fishActivity": "Very Active",
+            "bestBait": "Topwater Poppers"
+          },
+          {
+            "lake": "Pickwick Lake",
+            "waterTemp": 65,
+            "waterLevel": "Slightly Low",
+            "clarity": "Stained (3-4 ft)",
+            "fishActivity": "Active",
+            "bestBait": "Jigs & Crawfish"
+          }
+        ]
+      },
+      {
+        "id": "gearRecommendations",
+        "title": "Gear Recommendations",
+        "items": [
+          {
+            "name": "Abu Garcia Revo SX Spinning Reel",
+            "category": "Reels",
+            "price": "$129.99",
+            "rating": 4.8,
+            "description": "Smooth drag system perfect for Alabama bass fishing. Lightweight and durable construction.",
+            "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop",
+            "bestFor": "Largemouth Bass",
+            "availability": "In Stock"
+          },
+          {
+            "name": "St. Croix Bass X Casting Rod",
+            "category": "Rods",
+            "price": "$89.99",
+            "rating": 4.6,
+            "description": "Medium-heavy action rod ideal for spinnerbaits and jigs. Excellent sensitivity and power.",
+            "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop",
+            "bestFor": "Spinnerbaits & Jigs",
+            "availability": "In Stock"
+          },
+          {
+            "name": "Strike King KVD Square Bill Crankbait",
+            "category": "Lures",
+            "price": "$8.99",
+            "rating": 4.9,
+            "description": "Perfect for shallow water fishing around Alabama lake structure. Dives 2-4 feet.",
+            "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop",
+            "bestFor": "Shallow Cover",
+            "availability": "In Stock"
           }
         ]
       }

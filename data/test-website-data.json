@@ -1,0 +1,179 @@
+{
+    "site": {
+      "title": "ReelBama",
+      "description": "Your one-stop hub for fishing stories, tournaments, and weekly catches across Alabama waters.",
+      "author": "Captain Billy 'Bass' Thompson",
+      "logoUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop&crop=center",
+      "themeColor": "#1E3A8A"
+    },
+    "sections": [
+      {
+        "id": "catchOfTheWeek",
+        "title": "Catch of the Week",
+        "items": [
+          {
+            "angler": "Tommy Rivers",
+            "fish": "Largemouth Bass",
+            "weightLbs": 8.6,
+            "location": "Lake Guntersville",
+            "photoUrl": "/assets/catch-of-the-week/macy.jpeg",
+            "dateCaught": "2025-10-03"
+          },
+          {
+            "angler": "Lisa Grant",
+            "fish": "Spotted Bass",
+            "weightLbs": 7.9,
+            "location": "Pickwick Lake",
+            "photoUrl": "https://media.istockphoto.com/id/157405580/photo/happy-fisherman.jpg?s=612x612&w=0&k=20&c=OBMNKvMwbBOetigJj1LWOCtRyeiFlKZLhWu76EUvq-0=",
+            "dateCaught": "2025-10-02"
+          }
+        ]
+      },
+      {
+        "id": "tournamentWinners",
+        "title": "Tournament Winners",
+        "items": [
+          {
+            "event": "Guntersville Fall Classic",
+            "winner": "Mark Peters",
+            "team": "Deep Hookers",
+            "weightLbs": 22.5,
+            "date": "2025-09-28"
+          },
+          {
+            "event": "Lay Lake Invitational",
+            "winner": "Sara Jennings",
+            "team": "Reel Women",
+            "weightLbs": 19.8,
+            "date": "2025-09-22"
+          }
+        ]
+      },
+      {
+        "id": "roadTripOfTheMonth",
+        "title": "Road Trip of the Month",
+        "article": {
+          "title": "Exploring the Black Warrior River",
+          "author": "Billy Thompson",
+          "publishedDate": "2025-09-30",
+          "heroImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop&crop=center",
+          "markdown": "## A Hidden Gem\nThe Black Warrior River offers pristine fishing spots, cozy camping, and plenty of smallmouth bass waiting to bite. Here's our full trip log and recommendations..."
+        }
+      },
+      {
+        "id": "podcasts",
+        "title": "Podcast Links",
+        "episodes": [
+          {
+            "title": "Episode 12: Topwater Tricks for Fall Bass",
+            "host": "Billy Thompson",
+            "guest": "Scott Martin",
+            "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "date": "2025-09-25"
+          },
+          {
+            "title": "Episode 11: The Science Behind Spinnerbaits",
+            "host": "Billy Thompson",
+            "guest": "Dr. Emily Rhodes",
+            "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+            "date": "2025-09-18"
+          }
+        ]
+      },
+      {
+        "id": "dropShotColumn",
+        "title": "Drop-Shot Column",
+        "posts": [
+          {
+            "title": "The Secret to Suspended Bass",
+            "author": "Jake 'The Jig' Wallace",
+            "date": "2025-10-01",
+            "markdown": "### Drop-shotting Done Right\nIf you’ve ever wondered why your drop-shot rig isn’t getting bites, it might be your leader length..."
+          }
+        ]
+      },
+      {
+        "id": "trashFishOfTheWeek",
+        "title": "Trash Fish of the Week",
+        "entries": [
+          {
+            "offender": "John Doe",
+            "violation": "Fishing without a license",
+            "location": "Neely Henry Lake",
+            "fine": 250,
+            "date": "2025-09-27"
+          }
+        ]
+      },
+      {
+        "id": "wildlyAlabama",
+        "title": "Wildly Alabama (Creature Feature)",
+        "creatures": [
+          {
+            "name": "Alabama Sturgeon",
+            "imageUrl": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center",
+            "description": "A rare and protected fish species native to Alabama's rivers, known for its long snout and armored body."
+          },
+          {
+            "name": "Red Hills Salamander",
+            "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop&crop=center",
+            "description": "An elusive amphibian found only in Alabama's red clay hills. A true local treasure."
+          }
+        ]
+      },
+      {
+        "id": "photoOfTheWeek",
+        "title": "Photo of the Week",
+        "photo": {
+          "caption": "Sunset over Weiss Lake — October 2025",
+          "photographer": "Mason Clay",
+          "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center"
+        }
+      },
+      {
+        "id": "videoOfTheWeek",
+        "title": "GoPro Video of the Week",
+        "video": {
+          "title": "Underwater Strike Footage – Coosa River",
+          "creator": "Nathan Brooks",
+          "thumbnail": "http://img.youtube.com/vi/YmvtJ8APqXQ/maxresdefault.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=YmvtJ8APqXQ"
+        }
+      },
+      {
+        "id": "guideRegistry",
+        "title": "Guide Registry",
+        "guides": [
+          {
+            "name": "Captain Rick Johnson",
+            "region": "Lake Martin",
+            "specialty": "Largemouth Bass",
+            "contact": "rick@alabamafishing.com"
+          },
+          {
+            "name": "Shelby Monroe",
+            "region": "Tennessee River",
+            "specialty": "Crappie & Smallmouth",
+            "contact": "shelby@alabamafishing.com"
+          }
+        ]
+      },
+      {
+        "id": "calendar",
+        "title": "Important Calendar",
+        "events": [
+          {
+            "date": "2025-10-15",
+            "title": "Alabama State Championship",
+            "location": "Lake Guntersville"
+          },
+          {
+            "date": "2025-11-05",
+            "title": "Winter Prep Workshop",
+            "location": "Tuscaloosa Civic Center"
+          }
+        ]
+      }
+    ]
+  }
+  

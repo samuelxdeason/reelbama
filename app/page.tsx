@@ -97,10 +97,40 @@ interface CalendarEvent {
   location: string;
 }
 
+interface GearItem {
+  name: string;
+  category: string;
+  price: string;
+  rating: number;
+  description: string;
+  imageUrl: string;
+  bestFor: string;
+  availability: string;
+}
+
+interface WeatherData {
+  location: string;
+  temperature: number;
+  condition: string;
+  windSpeed: number;
+  windDirection: string;
+  pressure: number;
+  humidity: number;
+}
+
+interface LakeCondition {
+  lake: string;
+  waterTemp: number;
+  waterLevel: string;
+  clarity: string;
+  fishActivity: string;
+  bestBait: string;
+}
+
 interface SectionData {
   id: string;
   title: string;
-  items?: Catch[] | TournamentWinner[];
+  items?: Catch[] | TournamentWinner[] | GearItem[];
   article?: RoadTripArticle;
   episodes?: PodcastEpisode[];
   posts?: DropShotPost[];
@@ -110,6 +140,8 @@ interface SectionData {
   guides?: Guide[];
   creatures?: Creature[];
   events?: CalendarEvent[];
+  weather?: WeatherData[];
+  lakeConditions?: LakeCondition[];
 }
 
 export default function Home() {
@@ -243,7 +275,7 @@ export default function Home() {
             {/* Gear Recommendations */}
             <GearRecommendations 
               title="Recommended Gear"
-              items={getSection('gearRecommendations')?.items || []}
+              items={(getSection('gearRecommendations')?.items as GearItem[]) || []}
             />
           </div>
         </section>

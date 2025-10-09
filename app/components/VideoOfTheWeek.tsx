@@ -68,6 +68,25 @@ export default function VideoOfTheWeek({ title, video }: VideoOfTheWeekProps) {
           </div>
         </div>
       </div>
+      
+      {/* Submission Call-to-Action */}
+      <div className="mt-4 md:mt-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-deep-blue">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 text-2xl md:text-3xl">🎬</div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Submit Your Videos!</h3>
+            <p className="text-sm md:text-base text-gray-700">
+              Whether it&apos;s you landing a big fish, a buddy falling out of the boat or something neither of us has thought of, send it to us at{' '}
+              <a 
+                href="mailto:videos@reelbama.com" 
+                className="text-deep-blue hover:text-blue-800 font-semibold underline"
+              >
+                videos@reelbama.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

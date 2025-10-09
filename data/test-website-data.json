@@ -54,22 +54,24 @@
         ]
       },
       {
-        "id": "tournamentWinners",
-        "title": "Tournament Winners",
+        "id": "tournamentSchedule",
+        "title": "Tournament Schedule",
         "items": [
           {
-            "event": "Guntersville Fall Classic",
-            "winner": "Taylor Swift",
-            "team": "Deep Hookers",
-            "weightLbs": 22.5,
-            "date": "2025-09-28"
+            "name": "Guntersville Fall Championship",
+            "lake": "Lake Guntersville",
+            "ramp": "Goose Pond Ramp",
+            "date": "October 20, 2025",
+            "hours": "6:00 AM - 2:00 PM",
+            "contact": "tournament@guntersvillebassfishing.com"
           },
           {
-            "event": "Lay Lake Invitational",
-            "winner": "Joe Biden",
-            "team": "Reel Women",
-            "weightLbs": 19.8,
-            "date": "2025-09-22"
+            "name": "Pickwick Crappie Classic",
+            "lake": "Pickwick Lake",
+            "ramp": "McFarland Park Boat Ramp",
+            "date": "November 5, 2025",
+            "hours": "7:00 AM - 3:00 PM",
+            "contact": "info@pickwickcrappie.com"
           }
         ]
       },

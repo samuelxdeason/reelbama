@@ -2,7 +2,7 @@ import data from '../data/test-website-data.json';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import CatchOfTheWeek from './components/CatchOfTheWeek';
-import TournamentWinners from './components/TournamentWinners';
+import TournamentSchedule from './components/TournamentSchedule';
 import RoadTripOfTheMonth from './components/RoadTripOfTheMonth';
 import PodcastLinks from './components/PodcastLinks';
 import DropShotColumn from './components/DropShotColumn';
@@ -26,12 +26,13 @@ interface Catch {
   dateCaught: string;
 }
 
-interface TournamentWinner {
-  event: string;
-  winner: string;
-  team: string;
-  weightLbs: number;
+interface Tournament {
+  name: string;
+  lake: string;
+  ramp: string;
   date: string;
+  hours: string;
+  contact: string;
 }
 
 interface RoadTripArticle {
@@ -130,7 +131,7 @@ interface LakeCondition {
 interface SectionData {
   id: string;
   title: string;
-  items?: Catch[] | TournamentWinner[] | GearItem[];
+  items?: Catch[] | Tournament[] | GearItem[];
   article?: RoadTripArticle;
   episodes?: PodcastEpisode[];
   posts?: DropShotPost[];
@@ -240,10 +241,10 @@ export default function Home() {
         {/* Tournament & Resources Section */}
         <section className="mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Tournament Winners */}
-            <TournamentWinners 
-              title={getSection('tournamentWinners')?.title as string || ''}
-              items={(getSection('tournamentWinners')?.items as TournamentWinner[]) || []}
+            {/* Tournament Schedule */}
+            <TournamentSchedule 
+              title={getSection('tournamentSchedule')?.title as string || ''}
+              items={(getSection('tournamentSchedule')?.items as Tournament[]) || []}
             />
 
             {/* Guide Registry */}

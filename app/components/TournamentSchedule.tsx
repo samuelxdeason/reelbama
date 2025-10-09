@@ -14,7 +14,7 @@ interface TournamentScheduleProps {
 
 export default function TournamentSchedule({ title, items }: TournamentScheduleProps) {
   return (
-    <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8">
+    <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8 flex flex-col h-full">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8">
         <div className="flex items-center">
@@ -34,7 +34,7 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
         </a>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 flex-1">
         {items.map((tournament, index) => (
           <article key={index} className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-gold-accent">
             <div className="flex flex-col gap-3">

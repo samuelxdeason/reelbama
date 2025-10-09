@@ -55,6 +55,25 @@ export default function PhotoOfTheWeek({ title, photo }: PhotoOfTheWeekProps) {
           </div>
         </div>
       </div>
+      
+      {/* Submission Call-to-Action */}
+      <div className="mt-4 md:mt-6 bg-gradient-to-br from-sky-50 to-blue-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-community-blue">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 text-2xl md:text-3xl">🌅</div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Share Your Photos!</h3>
+            <p className="text-sm md:text-base text-gray-700">
+              Even when the fish aren&apos;t biting, there&apos;s beauty all around us. Let us see the world through your camera lens. Send us your best scenic photos to{' '}
+              <a 
+                href="mailto:photos@reelbama.com" 
+                className="text-community-blue hover:text-sky-700 font-semibold underline"
+              >
+                photos@reelbama.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

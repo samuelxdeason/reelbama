@@ -75,6 +75,26 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
           </article>
         ))}
       </div>
+      
+      {/* Submission Call-to-Action */}
+      <div className="mt-4 md:mt-6 bg-gradient-to-br from-blue-50 to-red-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-alabama-red">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 text-2xl md:text-3xl">📸</div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Submit Your Catch!</h3>
+            <p className="text-sm md:text-base text-gray-700 mb-3">
+              We want to see your best fish photos. Email them to us at{' '}
+              <a 
+                href="mailto:topcatch@reelbama.com" 
+                className="text-alabama-red hover:text-red-800 font-semibold underline"
+              >
+                topcatch@reelbama.com
+              </a>
+              . Be sure to tell us where it was caught, how much it weighed (even if you&apos;re estimating) and any other details you&apos;d like to share.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -33,9 +33,6 @@ export default function HeroSection({ title, description, author }: HeroSectionP
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
-              <button className="bg-alabama-red text-white hover:bg-red-800 font-semibold py-3 px-6 md:px-8 rounded-lg transition-colors duration-300 shadow-lg text-sm md:text-base whitespace-nowrap">
-                Join Our Community
-              </button>
               <button className="border-2 border-alabama-red text-alabama-red hover:bg-alabama-red hover:text-white font-semibold py-3 px-6 md:px-8 rounded-lg transition-colors duration-300 text-sm md:text-base whitespace-nowrap">
                 Read Our Blog
               </button>
@@ -62,34 +59,12 @@ export default function HeroSection({ title, description, author }: HeroSectionP
               />
               <div className="relative z-10 text-gray-800 text-center">
                 <div className="text-6xl mb-4 bob">🎣</div>
-                <h3 className="text-2xl font-bold mb-2">Join Our Community</h3>
+                <h3 className="text-2xl font-bold mb-2">Alabama Fishing Community</h3>
                 <p className="text-gray-700 mb-4">Share stories, tips, and connect with fellow anglers</p>
                 <div className="flex justify-center space-x-4 text-sm">
                   <span className="bg-white/80 px-3 py-1 rounded-full">📸 Photo Sharing</span>
                   <span className="bg-white/80 px-3 py-1 rounded-full">💬 Forums</span>
                 </div>
-              </div>
-            </div>
-            
-            {/* Community stats - hidden on mobile to prevent overflow */}
-            <div className="hidden md:block absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg border-2 border-alabama-red">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-alabama-red">2.5K+</div>
-                <div className="text-sm text-gray-600">Active Members</div>
-              </div>
-            </div>
-            
-            <div className="hidden md:block absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-lg border-2 border-community-blue">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-community-blue">150+</div>
-                <div className="text-sm text-gray-600">Blog Posts</div>
-              </div>
-            </div>
-            
-            <div className="hidden lg:block absolute top-1/2 -left-8 bg-white rounded-xl p-3 shadow-lg border-2 border-lake-green">
-              <div className="text-center">
-                <div className="text-lg font-bold text-lake-green">50+</div>
-                <div className="text-xs text-gray-600">Lakes Covered</div>
               </div>
             </div>
           </div>

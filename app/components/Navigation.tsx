@@ -100,7 +100,7 @@ export default function Navigation({ site }: NavigationProps) {
             </div>
           </div>
 
-          {/* Search and CTA */}
+          {/* Search */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <div className="relative hidden lg:block">
               <input
@@ -114,9 +114,6 @@ export default function Navigation({ site }: NavigationProps) {
                 </svg>
               </div>
             </div>
-            <button className="bg-alabama-red hover:bg-red-800 text-white px-4 lg:px-6 py-2 rounded-lg text-sm font-medium transition-colors shadow-lg whitespace-nowrap">
-              Join Community
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -161,9 +158,6 @@ export default function Navigation({ site }: NavigationProps) {
                   placeholder="Search catches, lakes, tips..."
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-alabama-red"
                 />
-                <button className="w-full mt-3 bg-alabama-red hover:bg-red-800 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  Join Community
-                </button>
               </div>
             </div>
           </div>

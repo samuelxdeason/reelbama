@@ -39,28 +39,34 @@ export async function GET() {
       };
     }
 
-    const episodes = data.items.map((item: YouTubePlaylistItem) => {
-      const snippet = item.snippet;
-      
-      // Get description and truncate if too long
-      const fullDescription = snippet.description || 'No description available';
-      const description = fullDescription.length > 150 
-        ? fullDescription.substring(0, 150) + '...' 
-        : fullDescription;
+    const episodes = data.items
+      .filter((item: YouTubePlaylistItem) => {
+        // Filter out private and deleted videos
+        const title = item.snippet.title.toLowerCase();
+        return !title.includes('private video') && !title.includes('deleted video');
+      })
+      .map((item: YouTubePlaylistItem) => {
+        const snippet = item.snippet;
+        
+        // Get description and truncate if too long
+        const fullDescription = snippet.description || 'No description available';
+        const description = fullDescription.length > 150 
+          ? fullDescription.substring(0, 150) + '...' 
+          : fullDescription;
 
-      return {
-        title: snippet.title,
-        description: description,
-        url: `https://www.youtube.com/watch?v=${snippet.resourceId.videoId}`,
-        date: new Date(snippet.publishedAt).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        }),
-        thumbnail: snippet.thumbnails.medium?.url || snippet.thumbnails.high?.url || snippet.thumbnails.default?.url,
-        videoId: snippet.resourceId.videoId
-      };
-    });
+        return {
+          title: snippet.title,
+          description: description,
+          url: `https://www.youtube.com/watch?v=${snippet.resourceId.videoId}`,
+          date: new Date(snippet.publishedAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          }),
+          thumbnail: snippet.thumbnails.medium?.url || snippet.thumbnails.high?.url || snippet.thumbnails.default?.url,
+          videoId: snippet.resourceId.videoId
+        };
+      });
 
     return NextResponse.json(episodes);
   } catch (error) {

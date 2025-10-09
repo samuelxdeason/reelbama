@@ -214,43 +214,62 @@
       },
       {
         "id": "fishingConditions",
-        "title": "Fishing Conditions",
-        "weather": [
+        "title": "Fishing Reports",
+        "reports": [
           {
-            "location": "Lake Guntersville",
-            "temperature": 72,
-            "condition": "Partly Cloudy",
-            "windSpeed": 8,
-            "windDirection": "NW",
-            "pressure": 30.15,
-            "humidity": 65
+            "lake": "Lake Martin",
+            "date": "October 9, 2025",
+            "reporter": "Tommy Rodriguez",
+            "conditions": "Early morning fog cleared by 9am. Light winds from the east at 3mph. Water temp was 66°F, down a couple degrees from last week. Barometer rising at 30.18. Comfortable temps in the mid 70s.",
+            "waterTemp": 66,
+            "clarity": "Clear (8-10 ft)",
+            "report": "Had an excellent morning on Lake Martin targeting spotted bass. The fish are staging on secondary points leading into main lake pockets. Focused on 15-25 feet of water with a lot of success on drop shots and small swimbaits. The cooler water temps have the fish feeding heavily. Also caught a few nice largemouth mixed in, with one going over 5 lbs! Key was slowing down the presentation and really working the structure thoroughly.",
+            "catchReport": "Caught 20+ spots with about 8 that would have helped in a tournament. Largest was 3.2 lbs. Also caught that 5.3 lb largemouth which was a personal best for Lake Martin! Everything caught on light line and finesse tactics.",
+            "bestLures": ["Drop Shot (Roboworm)", "3 inch Swimbait", "Shaky Head", "Small Jerkbait"]
           },
           {
-            "location": "Pickwick Lake",
-            "temperature": 68,
-            "condition": "Sunny",
-            "windSpeed": 5,
-            "windDirection": "SW",
-            "pressure": 30.22,
-            "humidity": 58
-          }
-        ],
-        "lakeConditions": [
-          {
             "lake": "Lake Guntersville",
+            "date": "October 8, 2025",
+            "reporter": "Mike Johnson",
+            "conditions": "Partly cloudy skies with NW winds at 8mph. Water temperature holding steady at 68°F. Barometer at 30.15 and stable. Humidity around 65%. Perfect fall fishing conditions.",
             "waterTemp": 68,
-            "waterLevel": "Normal",
             "clarity": "Clear (6-8 ft)",
-            "fishActivity": "Very Active",
-            "bestBait": "Topwater Poppers"
+            "report": "Lake Guntersville is fishing great right now! The bass are actively feeding in preparation for winter. Found most of my fish in 8-12 feet of water around main lake points and secondary points. Early morning bite was hot with topwater action. As the sun came up, switched to crankbaits and caught several nice keepers. The grass beds are still holding fish, but they're starting to move deeper.",
+            "catchReport": "Landed 12 bass total with 6 keepers between 2-4 lbs. Best fish was a 4.2 lb largemouth caught on a white chatterbait around grass. Also caught several nice crappie while fishing brush piles.",
+            "bestLures": ["Topwater Poppers", "Square Bill Crankbaits", "White Chatterbait", "Texas Rigged Worms"]
           },
           {
             "lake": "Pickwick Lake",
+            "date": "October 7, 2025",
+            "reporter": "Sarah Williams",
+            "conditions": "Beautiful sunny day with light SW winds at 5mph. Water temp at 65°F and slightly low water levels. Pressure steady at 30.22. Great day to be on the water!",
             "waterTemp": 65,
-            "waterLevel": "Slightly Low",
             "clarity": "Stained (3-4 ft)",
-            "fishActivity": "Active",
-            "bestBait": "Jigs & Crawfish"
+            "report": "Pickwick is producing some quality fish right now. The water is a bit stained from recent rain, which has the fish biting well. Focused on rocky banks and current breaks. The smallmouth are schooling up and can be found on main lake ledges. Spotted bass are holding on shell beds in 15-20 feet. Slow rolled jigs and threw crawfish patterns for most of my catches.",
+            "catchReport": "Great day with 15 bass caught! Mix of largemouth, smallmouth, and spots. Best smallmouth was 3.8 lbs on a jig. Several fish in the 2-3 lb range. All fish released healthy.",
+            "bestLures": ["Football Jigs", "Crawfish Crankbaits", "Drop Shot", "Ned Rig"]
+          },
+          {
+            "lake": "Weiss Lake",
+            "date": "October 6, 2025",
+            "reporter": "Brandon Mitchell",
+            "conditions": "Overcast morning with steady drizzle. SE winds at 10mph. Water temperature at 67°F. Falling barometer at 29.95. Rain expected to continue through the afternoon.",
+            "waterTemp": 67,
+            "clarity": "Muddy (1-2 ft)",
+            "report": "Don't let the rain fool you - Weiss Lake was on fire today! The muddy water from recent rains has the fish biting aggressively. Focused on shallow water flipping and pitching heavy cover. The bass were holding tight to docks, laydowns, and brush piles. Bright colored jigs and chatterbaits were the ticket. The crappie bite was also excellent around bridge pilings. This is prime time to target shallow aggressive feeders.",
+            "catchReport": "Had a banner day with 18 bass landed including 3 over 4 lbs. Best fish was a chunky 4.8 lb largemouth that absolutely crushed a black and blue jig. Also picked up a dozen crappie for the dinner table. All bass were released to fight another day.",
+            "bestLures": ["Black & Blue Jig", "Chartreuse Chatterbait", "Spinnerbait (White/Chartreuse)", "Texas Rig (Junebug)"]
+          },
+          {
+            "lake": "Lake Eufaula",
+            "date": "October 5, 2025",
+            "reporter": "Jessica Carter",
+            "conditions": "Perfect fall weather with clear blue skies. Light N winds at 4mph. Water temp cooling to 64°F. High pressure system at 30.28. Couldn't ask for better conditions.",
+            "waterTemp": 64,
+            "clarity": "Clear (7-9 ft)",
+            "report": "Lake Eufaula continues to produce quality fish as we move into fall. The bass are transitioning to their fall patterns and can be found on main lake structures. Had success targeting points and humps in 12-18 feet of water. Carolina rigs and deep diving crankbaits were productive. Also found some fish suspended over deeper water chasing baitfish. The key was covering water and finding active schools. Once located, the fish were willing to bite.",
+            "catchReport": "Solid day with 14 bass caught. Most were in the 2-3 lb range with my best going 4.5 lbs on a deep diving crankbait. Also caught a nice 6 lb striper that took a swimbait meant for bass. Great mixed bag day!",
+            "bestLures": ["Carolina Rig (Zoom Lizard)", "Deep Diving Crankbait", "Swimbait (4 inch)", "Underspin"]
           }
         ]
       },

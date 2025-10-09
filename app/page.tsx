@@ -267,10 +267,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Fishing Conditions */}
+            {/* Fishing Reports */}
             <FishingConditions 
-              weather={getSection('fishingConditions')?.weather || []}
-              lakeConditions={getSection('fishingConditions')?.lakeConditions || []}
+              reports={getSection('fishingConditions')?.reports || []}
+              title={getSection('fishingConditions')?.title || 'Fishing Reports'}
+              showViewAll={true}
+              limit={1}
             />
 
             {/* Gear Recommendations */}

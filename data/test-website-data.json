@@ -92,17 +92,17 @@
         "episodes": [
           {
             "title": "Episode 12: Topwater Tricks for Fall Bass",
-            "host": "Bryan Brasher",
-            "guest": "Scott Martin",
+            "description": "Join us as we discuss the best topwater techniques for catching fall bass. Learn about lure selection, timing, and retrieval methods that work.",
             "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "date": "2025-09-25"
+            "date": "Sep 25, 2025",
+            "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg"
           },
           {
             "title": "Episode 11: The Science Behind Spinnerbaits",
-            "host": "Bryan Brasher",
-            "guest": "Dr. Emily Rhodes",
+            "description": "Dive deep into the physics and biology of spinnerbait fishing. Discover why certain blade types work better in different conditions.",
             "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-            "date": "2025-09-18"
+            "date": "Sep 18, 2025",
+            "thumbnail": "https://img.youtube.com/vi/jNQXAC9IVRw/mqdefault.jpg"
           }
         ]
       },
@@ -114,7 +114,19 @@
             "title": "The Secret to Suspended Bass",
             "author": "Jake 'The Jig' Wallace",
             "date": "2025-10-01",
-            "markdown": "### Drop-shotting Done Right\nIf you’ve ever wondered why your drop-shot rig isn’t getting bites, it might be your leader length..."
+            "markdown": "### Drop-shotting Done Right\nIf you've ever wondered why your drop-shot rig isn't getting bites, it might be your leader length..."
+          },
+          {
+            "title": "Crankbait Colors That Actually Work",
+            "author": "Sarah Mitchell",
+            "date": "2025-09-28",
+            "markdown": "### Understanding Water Clarity\nChoosing the right crankbait color isn't just about what looks good to you. Learn which colors produce in stained water versus clear conditions..."
+          },
+          {
+            "title": "Alabama Rig Setup for Fall Fishing",
+            "author": "Mike Richardson",
+            "date": "2025-09-24",
+            "markdown": "### The Perfect Alabama Rig\nFall is prime time for the Alabama rig on our lakes. Here's how to set it up for maximum effectiveness and avoid common mistakes..."
           }
         ]
       },

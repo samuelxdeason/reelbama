@@ -12,7 +12,7 @@ interface DropShotColumnProps {
 
 export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
   return (
-    <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
+    <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8 flex flex-col md:h-full">
       <div className="flex items-center mb-6 md:mb-8">
         <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blog-accent to-purple-800 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
           <span className="text-xl md:text-2xl">📝</span>
@@ -23,9 +23,9 @@ export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
         </div>
       </div>
       
-      <div className="space-y-4 md:space-y-6">
+      <div className="flex flex-col gap-2 md:flex-1 md:flex">
         {posts.map((post, index) => (
-          <article key={index} className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg border border-gray-200 hover:shadow-xl hover:border-blog-accent transition-all duration-300">
+          <article key={index} className="bg-gray-50 rounded-xl p-5 md:p-7 shadow-lg border border-gray-200 hover:shadow-xl hover:border-blog-accent transition-all duration-300 md:flex-1">
             <div className="flex items-start gap-3 mb-3 md:mb-4">
               <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blog-accent to-purple-800 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
                 <span className="text-white text-base md:text-lg">🎣</span>
@@ -40,11 +40,10 @@ export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
               </div>
             </div>
             
-            <div className="mb-3 md:mb-4">
+            <div className="mb-4 md:mb-5 md:flex-1">
               <div className="text-gray-700 leading-relaxed">
-                <h4 className="text-sm md:text-lg font-semibold mb-2 text-gray-900">Drop-shotting Done Right</h4>
-                <p className="text-xs md:text-base text-gray-600 line-clamp-3">
-                  If you&apos;ve ever wondered why your drop-shot rig isn&apos;t getting bites, it might be your leader length...
+                <p className="text-xs md:text-base text-gray-600 md:line-clamp-8">
+                  {post.markdown.replace(/#{1,6}\s/g, '').replace(/\n/g, ' ')}
                 </p>
               </div>
             </div>

@@ -11,9 +11,25 @@ function getData() {
   return JSON.parse(fileContents);
 }
 
+interface Section {
+  id: string;
+  title?: string;
+  reports?: Array<{
+    lake: string;
+    date: string;
+    reporter: string;
+    conditions: string;
+    waterTemp: number;
+    clarity: string;
+    report: string;
+    catchReport: string;
+    bestLures: string[];
+  }>;
+}
+
 export default function ReportsPage() {
   const data = getData();
-  const fishingSection = data.sections.find((section: any) => section.id === 'fishingConditions');
+  const fishingSection = data.sections.find((section: Section) => section.id === 'fishingConditions');
   const reports = fishingSection?.reports || [];
 
   return (
@@ -36,7 +52,7 @@ export default function ReportsPage() {
               Alabama Fishing Reports
             </h1>
             <p className="text-base md:text-xl text-gray-700 max-w-2xl mx-auto">
-              Latest reports from anglers across Alabama's best fishing lakes and rivers.
+              Latest reports from anglers across Alabama&apos;s best fishing lakes and rivers.
             </p>
           </div>
         </div>
@@ -54,7 +70,9 @@ export default function ReportsPage() {
       <Footer site={{
         title: "ReelBama",
         description: "Your one-stop hub for fishing stories, tournaments, and weekly catches across Alabama waters.",
-        author: "Bryan Brasher"
+        author: "Bryan Brasher",
+        logoUrl: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop&crop=center",
+        themeColor: "#1E3A8A"
       }} />
     </div>
   );

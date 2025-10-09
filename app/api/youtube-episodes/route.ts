@@ -23,7 +23,23 @@ export async function GET() {
 
     const data = await response.json();
 
-    const episodes = data.items.map((item: any) => {
+    interface YouTubePlaylistItem {
+      snippet: {
+        title: string;
+        description: string;
+        publishedAt: string;
+        resourceId: {
+          videoId: string;
+        };
+        thumbnails: {
+          default?: { url: string };
+          medium?: { url: string };
+          high?: { url: string };
+        };
+      };
+    }
+
+    const episodes = data.items.map((item: YouTubePlaylistItem) => {
       const snippet = item.snippet;
       
       // Get description and truncate if too long

@@ -45,10 +45,11 @@ interface RoadTripArticle {
 
 interface PodcastEpisode {
   title: string;
-  host: string;
-  guest: string;
+  description: string;
   url: string;
   date: string;
+  thumbnail: string;
+  videoId?: string;
 }
 
 interface DropShotPost {
@@ -109,23 +110,16 @@ interface GearItem {
   availability: string;
 }
 
-interface WeatherData {
-  location: string;
-  temperature: number;
-  condition: string;
-  windSpeed: number;
-  windDirection: string;
-  pressure: number;
-  humidity: number;
-}
-
-interface LakeCondition {
+interface FishingReport {
   lake: string;
+  date: string;
+  reporter: string;
+  conditions: string;
   waterTemp: number;
-  waterLevel: string;
   clarity: string;
-  fishActivity: string;
-  bestBait: string;
+  report: string;
+  catchReport: string;
+  bestLures: string[];
 }
 
 interface SectionData {
@@ -141,8 +135,7 @@ interface SectionData {
   guides?: Guide[];
   creatures?: Creature[];
   events?: CalendarEvent[];
-  weather?: WeatherData[];
-  lakeConditions?: LakeCondition[];
+  reports?: FishingReport[];
 }
 
 export default function Home() {

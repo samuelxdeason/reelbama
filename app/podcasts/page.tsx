@@ -323,7 +323,9 @@ export default function PodcastsPage() {
       <Footer site={{
         title: "ReelBama",
         description: "Your one-stop hub for fishing stories, tournaments, and weekly catches across Alabama waters.",
-        author: "Bryan Brasher"
+        author: "Bryan Brasher",
+        logoUrl: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop&crop=center",
+        themeColor: "#1E3A8A"
       }} />
     </div>
   );

@@ -12,8 +12,9 @@ export async function GET() {
   }
 
   try {
+    // Fetch extra videos to account for any private/deleted ones that will be filtered out
     const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&playlistId=${PLAYLIST_ID}&key=${YOUTUBE_API_KEY}`,
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=8&playlistId=${PLAYLIST_ID}&key=${YOUTUBE_API_KEY}`,
       { next: { revalidate: 3600 } } // Cache for 1 hour
     );
 
@@ -66,7 +67,8 @@ export async function GET() {
           thumbnail: snippet.thumbnails.medium?.url || snippet.thumbnails.high?.url || snippet.thumbnails.default?.url,
           videoId: snippet.resourceId.videoId
         };
-      });
+      })
+      .slice(0, 4); // Return only the first 4 public videos
 
     return NextResponse.json(episodes);
   } catch (error) {

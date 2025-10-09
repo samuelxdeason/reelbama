@@ -15,6 +15,8 @@ interface GearRecommendationsProps {
 }
 
 export default function GearRecommendations({ title, items }: GearRecommendationsProps) {
+  const hasContent = items && items.length > 0;
+
   const getRatingStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <span key={i} className={i < rating ? 'text-yellow-400' : 'text-gray-300'}>
@@ -48,6 +50,15 @@ export default function GearRecommendations({ title, items }: GearRecommendation
         </div>
       </div>
 
+      {!hasContent ? (
+        <div className="flex-1 flex items-center justify-center py-12">
+          <div className="text-center">
+            <div className="text-6xl mb-4">🛒</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No Gear Recommendations</h3>
+            <p className="text-gray-600">Check back soon for gear recommendations</p>
+          </div>
+        </div>
+      ) : (
       <div className="space-y-4 md:space-y-6 flex-1 flex flex-col">
         {items.map((item, index) => (
           <div key={index} className="bg-gray-50 rounded-xl p-4 md:p-5 hover:shadow-lg transition-all duration-300 border border-gray-200 flex-1">
@@ -107,6 +118,7 @@ export default function GearRecommendations({ title, items }: GearRecommendation
           </div>
         ))}
       </div>
+      )}
     </div>
   );
 }

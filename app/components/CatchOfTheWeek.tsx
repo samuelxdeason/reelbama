@@ -14,7 +14,8 @@ interface CatchOfTheWeekProps {
 
 export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
   // Only show first 4 items
-  const displayItems = items.slice(0, 4);
+  const displayItems = items?.slice(0, 4) || [];
+  const hasContent = displayItems && displayItems.length > 0;
   
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8 flex flex-col h-full">
@@ -38,6 +39,15 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
       </div>
       
       {/* Simple 2x2 Grid - 4 equal-sized catches */}
+      {!hasContent ? (
+        <div className="flex-1 flex items-center justify-center min-h-[400px] md:min-h-[500px]">
+          <div className="text-center py-12">
+            <div className="text-6xl mb-4">🎣</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No Catches Yet</h3>
+            <p className="text-gray-600">Be the first to submit your catch!</p>
+          </div>
+        </div>
+      ) : (
       <div className="grid grid-cols-2 grid-rows-2 gap-3 md:gap-4 flex-1 min-h-[400px] md:min-h-[500px]">
         {displayItems.map((catchItem, index) => (
           <article 
@@ -75,6 +85,7 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
           </article>
         ))}
       </div>
+      )}
       
       {/* Submission Call-to-Action */}
       <div className="mt-4 md:mt-6 bg-gradient-to-br from-blue-50 to-red-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-alabama-red">

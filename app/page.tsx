@@ -1,4 +1,3 @@
-import data from '../data/test-website-data.json';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import CatchOfTheWeek from './components/CatchOfTheWeek';
@@ -15,6 +14,26 @@ import ImportantCalendar from './components/ImportantCalendar';
 import FishingConditions from './components/FishingConditions';
 import GearRecommendations from './components/GearRecommendations';
 import Footer from './components/Footer';
+
+// Sanity imports
+import {
+  getCatchesOfTheWeek,
+  getFishingReports,
+  getTournaments,
+  getPhotoOfTheWeek,
+  getVideoOfTheWeek,
+  getGuides,
+  getDropShotPosts,
+  getRoadTrip,
+  getGearRecommendations,
+  getCreatures,
+  getCalendarEvents,
+  getTrashFish,
+  blockContentToText,
+} from '../sanity/lib/fetch';
+
+// Note: The site will show empty sections until you add content to Sanity at /studio
+// Visit http://localhost:3001/api/sanity-status to check what content exists
 
 // Type definitions for the data
 interface Catch {
@@ -41,15 +60,6 @@ interface RoadTripArticle {
   publishedDate: string;
   heroImage: string;
   markdown: string;
-}
-
-interface PodcastEpisode {
-  title: string;
-  description: string;
-  url: string;
-  date: string;
-  thumbnail: string;
-  videoId?: string;
 }
 
 interface DropShotPost {
@@ -110,39 +120,68 @@ interface GearItem {
   availability: string;
 }
 
-interface FishingReport {
-  lake: string;
-  date: string;
-  reporter: string;
-  conditions: string;
-  waterTemp: number;
-  clarity: string;
-  report: string;
-  catchReport: string;
-  bestLures: string[];
-}
+export default async function Home() {
+  // Site info (hardcoded for now, can add to Sanity later)
+  const site = {
+    title: "ReelBama",
+    description: "Your one-stop hub for fishing stories, tournaments, and weekly catches across Alabama waters.",
+    author: "Bryan Brasher",
+    logoUrl: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop&crop=center",
+    themeColor: "#1E3A8A"
+  };
 
-interface SectionData {
-  id: string;
-  title: string;
-  items?: Catch[] | Tournament[] | GearItem[];
-  article?: RoadTripArticle;
-  episodes?: PodcastEpisode[];
-  posts?: DropShotPost[];
-  entries?: TrashFishEntry[];
-  photo?: Photo;
-  video?: Video;
-  guides?: Guide[];
-  creatures?: Creature[];
-  events?: CalendarEvent[];
-  reports?: FishingReport[];
-}
+  // Fetch all data from Sanity
+  const [
+    catches,
+    fishingReports,
+    tournaments,
+    photoOfWeek,
+    videoOfWeek,
+    guides,
+    sanityDropShot,
+    roadTripData,
+    gearItems,
+    creatures,
+    calendarEvents,
+    trashFishEntry,
+  ] = await Promise.all([
+    getCatchesOfTheWeek(),
+    getFishingReports(1),
+    getTournaments(),
+    getPhotoOfTheWeek(),
+    getVideoOfTheWeek(),
+    getGuides(),
+    getDropShotPosts(3),
+    getRoadTrip(),
+    getGearRecommendations(3),
+    getCreatures(),
+    getCalendarEvents(),
+    getTrashFish(),
+  ])
 
-export default function Home() {
-  const { site, sections } = data;
-
-  // Helper function to find section by ID
-  const getSection = (id: string): SectionData | undefined => sections.find((section: SectionData) => section.id === id);
+  // Transform Sanity data to match component interfaces
+  interface SanityDropShotPost {
+    title: string;
+    author: string;
+    publishedDate: string;
+    excerpt?: string;
+    content?: unknown[];
+  }
+  
+  const dropShotPosts = sanityDropShot.map((post: SanityDropShotPost) => ({
+    title: post.title,
+    author: post.author,
+    date: new Date(post.publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+    markdown: post.excerpt || blockContentToText(post.content || []),
+  }))
+  
+  const roadTrip = roadTripData ? {
+    title: roadTripData.title,
+    author: roadTripData.author,
+    publishedDate: roadTripData.publishedDate,
+    heroImage: roadTripData.heroImage,
+    markdown: roadTripData.excerpt || blockContentToText(roadTripData.content),
+  } : null;
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -173,8 +212,8 @@ export default function Home() {
             {/* Featured Blog Post */}
             <div className="lg:col-span-2">
               <RoadTripOfTheMonth 
-                title={getSection('roadTripOfTheMonth')?.title as string || ''}
-                article={(getSection('roadTripOfTheMonth')?.article as RoadTripArticle) || {} as RoadTripArticle}
+                title="Road Trip of the Month"
+                article={roadTrip as RoadTripArticle}
               />
             </div>
           </div>
@@ -182,14 +221,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Drop-Shot Column */}
             <DropShotColumn 
-              title={getSection('dropShotColumn')?.title as string || ''}
-              posts={(getSection('dropShotColumn')?.posts as DropShotPost[]) || []}
+              title="Drop-Shot Column"
+              posts={dropShotPosts as DropShotPost[]}
             />
 
             {/* Podcast Links */}
             <PodcastLinks 
-              title={getSection('podcasts')?.title as string || ''}
-              episodes={(getSection('podcasts')?.episodes as PodcastEpisode[]) || []}
+              title="Podcast Links"
+              episodes={[]}
             />
           </div>
         </section>
@@ -209,8 +248,8 @@ export default function Home() {
             {/* Catch of the Week */}
             <div className="lg:w-2/3">
               <CatchOfTheWeek 
-                title={getSection('catchOfTheWeek')?.title as string || ''}
-                items={(getSection('catchOfTheWeek')?.items as Catch[]) || []}
+                title="Catch of the Week"
+                items={catches as Catch[]}
               />
             </div>
 
@@ -218,14 +257,14 @@ export default function Home() {
             <div className="lg:w-1/3 flex flex-col gap-8 min-w-0">
               {/* Photo of the Week */}
               <PhotoOfTheWeek 
-                title={getSection('photoOfTheWeek')?.title as string || ''}
-                photo={(getSection('photoOfTheWeek')?.photo as Photo) || {} as Photo}
+                title="Photo of the Week"
+                photo={photoOfWeek as Photo}
               />
 
               {/* Video of the Week */}
               <VideoOfTheWeek 
-                title={getSection('videoOfTheWeek')?.title as string || ''}
-                video={(getSection('videoOfTheWeek')?.video as Video) || {} as Video}
+                title="GoPro Video of the Week"
+                video={videoOfWeek as Video}
               />
             </div>
           </div>
@@ -236,14 +275,14 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Tournament Schedule */}
             <TournamentSchedule 
-              title={getSection('tournamentSchedule')?.title as string || ''}
-              items={(getSection('tournamentSchedule')?.items as Tournament[]) || []}
+              title="Tournament Schedule"
+              items={tournaments as Tournament[]}
             />
 
             {/* Guide Registry */}
             <GuideRegistry 
-              title={getSection('guideRegistry')?.title as string || ''}
-              guides={(getSection('guideRegistry')?.guides as Guide[]) || []}
+              title="Guide Registry"
+              guides={guides as Guide[]}
             />
           </div>
         </section>
@@ -262,8 +301,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Fishing Reports */}
             <FishingConditions 
-              reports={getSection('fishingConditions')?.reports || []}
-              title={getSection('fishingConditions')?.title || 'Fishing Reports'}
+              reports={fishingReports}
+              title="Fishing Reports"
               showViewAll={true}
               limit={1}
             />
@@ -271,7 +310,7 @@ export default function Home() {
             {/* Gear Recommendations */}
             <GearRecommendations 
               title="Recommended Gear"
-              items={(getSection('gearRecommendations')?.items as GearItem[]) || []}
+              items={gearItems as GearItem[]}
             />
           </div>
         </section>
@@ -279,22 +318,24 @@ export default function Home() {
         {/* Full-width sections */}
         <div className="space-y-16">
           {/* Wildly Alabama */}
-          <WildlyAlabama 
-            title={getSection('wildlyAlabama')?.title as string || ''}
-            creatures={(getSection('wildlyAlabama')?.creatures as Creature[]) || []}
+          <WildlyAlabama
+            title="Wildly Alabama (Creature Feature)"
+            creatures={creatures as Creature[]}
           />
 
           {/* Important Calendar */}
-          <ImportantCalendar 
-            title={getSection('calendar')?.title as string || ''}
-            events={(getSection('calendar')?.events as CalendarEvent[]) || []}
+          <ImportantCalendar
+            title="Important Calendar"
+            events={calendarEvents as CalendarEvent[]}
           />
 
           {/* Trash Fish of the Week - moved to bottom */}
-          <TrashFishOfTheWeek 
-            title={getSection('trashFishOfTheWeek')?.title as string || ''}
-            entries={(getSection('trashFishOfTheWeek')?.entries as TrashFishEntry[]) || []}
-          />
+          {trashFishEntry && (
+            <TrashFishOfTheWeek
+              title="Trash Fish of the Week"
+              entries={[trashFishEntry] as TrashFishEntry[]}
+            />
+          )}
         </div>
       </main>
 

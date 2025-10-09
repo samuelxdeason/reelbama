@@ -5,8 +5,9 @@ export async function GET() {
   const PLAYLIST_ID = 'PLKhPstAakbEfEzGUwKgPXPoBCyBXJPVVq';
 
   if (!YOUTUBE_API_KEY) {
+    console.error('YouTube API key not found in environment variables');
     return NextResponse.json(
-      { error: 'YouTube API key not configured' },
+      { error: 'YouTube API key not configured. Please add YOUTUBE_API_KEY to environment variables.' },
       { status: 500 }
     );
   }

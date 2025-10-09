@@ -1,36 +1,11 @@
 import FishingConditions from '../components/FishingConditions';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import fs from 'fs';
-import path from 'path';
+import { getFishingReports } from '../../sanity/lib/fetch';
 
-// Load data from JSON file
-function getData() {
-  const filePath = path.join(process.cwd(), 'data', 'test-website-data.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileContents);
-}
-
-interface Section {
-  id: string;
-  title?: string;
-  reports?: Array<{
-    lake: string;
-    date: string;
-    reporter: string;
-    conditions: string;
-    waterTemp: number;
-    clarity: string;
-    report: string;
-    catchReport: string;
-    bestLures: string[];
-  }>;
-}
-
-export default function ReportsPage() {
-  const data = getData();
-  const fishingSection = data.sections.find((section: Section) => section.id === 'fishingConditions');
-  const reports = fishingSection?.reports || [];
+export default async function ReportsPage() {
+  // Fetch all fishing reports from Sanity
+  const reports = await getFishingReports();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -62,7 +37,7 @@ export default function ReportsPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
         <FishingConditions 
           reports={reports}
-          title={fishingSection?.title || "Fishing Reports"}
+          title="Fishing Reports"
         />
       </main>
 

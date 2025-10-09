@@ -11,6 +11,8 @@ interface DropShotColumnProps {
 }
 
 export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
+  const hasContent = posts && posts.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8 flex flex-col md:h-full">
       <div className="flex items-center mb-6 md:mb-8">
@@ -23,6 +25,15 @@ export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
         </div>
       </div>
       
+      {!hasContent ? (
+        <div className="flex-1 flex items-center justify-center py-16">
+          <div className="text-center">
+            <div className="text-6xl mb-4">📝</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No Articles Yet</h3>
+            <p className="text-gray-600">Check back soon for fishing tips and techniques</p>
+          </div>
+        </div>
+      ) : (
       <div className="flex flex-col gap-2 md:flex-1 md:flex">
         {posts.map((post, index) => (
           <article key={index} className="bg-gray-50 rounded-xl p-5 md:p-7 shadow-lg border border-gray-200 hover:shadow-xl hover:border-blog-accent transition-all duration-300 md:flex-1">
@@ -59,6 +70,7 @@ export default function DropShotColumn({ title, posts }: DropShotColumnProps) {
           </article>
         ))}
       </div>
+      )}
     </section>
   );
 }

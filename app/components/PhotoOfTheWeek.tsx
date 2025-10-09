@@ -8,6 +8,28 @@ interface PhotoOfTheWeekProps {
 }
 
 export default function PhotoOfTheWeek({ title, photo }: PhotoOfTheWeekProps) {
+  const hasContent = photo && photo.url;
+
+  if (!hasContent) {
+    return (
+      <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-6">
+        <div className="flex items-center mb-4">
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blog-accent to-purple-800 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
+            <span className="text-xl md:text-2xl">📸</span>
+          </div>
+          <div className="min-w-0">
+            <h3 className="text-base md:text-lg font-bold text-gray-900 font-heading">{title}</h3>
+          </div>
+        </div>
+        <div className="text-center py-12">
+          <div className="text-5xl mb-3">📸</div>
+          <h4 className="text-lg font-bold text-gray-900 mb-2">No Photo Yet</h4>
+          <p className="text-gray-600 text-sm">Check back soon for scenic photos</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-6">
       {/* Section Header */}

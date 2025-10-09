@@ -12,6 +12,29 @@ interface RoadTripOfTheMonthProps {
 }
 
 export default function RoadTripOfTheMonth({ title, article }: RoadTripOfTheMonthProps) {
+  const hasContent = article && article.title;
+
+  if (!hasContent) {
+    return (
+      <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
+        <div className="flex items-center mb-6 md:mb-8">
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-sunset-orange to-red-700 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
+            <span className="text-xl md:text-2xl">🗺️</span>
+          </div>
+          <div className="min-w-0">
+            <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
+            <p className="text-gray-600 text-xs md:text-sm">Monthly featured destination</p>
+          </div>
+        </div>
+        <div className="text-center py-16">
+          <div className="text-6xl mb-4">🗺️</div>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">No Road Trip Featured</h3>
+          <p className="text-gray-600">Check back soon for fishing destination articles</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8">
       {/* Section Header */}

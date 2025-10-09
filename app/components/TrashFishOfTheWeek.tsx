@@ -12,6 +12,8 @@ interface TrashFishOfTheWeekProps {
 }
 
 export default function TrashFishOfTheWeek({ title, entries }: TrashFishOfTheWeekProps) {
+  const hasContent = entries && entries.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
       <div className="flex items-center mb-6 md:mb-8">
@@ -24,6 +26,13 @@ export default function TrashFishOfTheWeek({ title, entries }: TrashFishOfTheWee
         </div>
       </div>
       
+      {!hasContent ? (
+        <div className="text-center py-16">
+          <div className="text-6xl mb-4">⚠️</div>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">No Violations Reported</h3>
+          <p className="text-gray-600">Keeping Alabama waters clean and legal!</p>
+        </div>
+      ) : (
       <div className="space-y-6">
         {entries.map((entry, index) => (
           <div key={index} className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6 border-2 border-red-200 relative overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -75,6 +84,7 @@ export default function TrashFishOfTheWeek({ title, entries }: TrashFishOfTheWee
           </div>
         ))}
       </div>
+      )}
     </section>
   );
 }

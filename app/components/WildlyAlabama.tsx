@@ -10,6 +10,8 @@ interface WildlyAlabamaProps {
 }
 
 export default function WildlyAlabama({ title, creatures }: WildlyAlabamaProps) {
+  const hasContent = creatures && creatures.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
       <div className="flex items-center mb-6 md:mb-8">
@@ -22,6 +24,13 @@ export default function WildlyAlabama({ title, creatures }: WildlyAlabamaProps) 
         </div>
       </div>
       
+      {!hasContent ? (
+        <div className="text-center py-16">
+          <div className="text-6xl mb-4">🐟</div>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">No Creatures Featured</h3>
+          <p className="text-gray-600">Check back soon for Alabama wildlife features</p>
+        </div>
+      ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {creatures.map((creature, index) => (
           <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-lake-green">
@@ -51,6 +60,7 @@ export default function WildlyAlabama({ title, creatures }: WildlyAlabamaProps) 
           </div>
         ))}
       </div>
+      )}
     </section>
   );
 }

@@ -10,6 +10,8 @@ interface ImportantCalendarProps {
 }
 
 export default function ImportantCalendar({ title, events }: ImportantCalendarProps) {
+  const hasContent = events && events.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
       <div className="flex items-center mb-6 md:mb-8">
@@ -22,6 +24,13 @@ export default function ImportantCalendar({ title, events }: ImportantCalendarPr
         </div>
       </div>
       
+      {!hasContent ? (
+        <div className="text-center py-16">
+          <div className="text-6xl mb-4">📅</div>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">No Events Scheduled</h3>
+          <p className="text-gray-600">Check back soon for upcoming events</p>
+        </div>
+      ) : (
       <div className="space-y-4">
         {events.map((event, index) => (
           <div key={index} className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 md:p-6 bg-gradient-to-r from-blue-50 to-sky-50 rounded-lg border border-gray-200 hover:shadow-md hover:border-community-blue transition-all duration-300">
@@ -64,6 +73,7 @@ export default function ImportantCalendar({ title, events }: ImportantCalendarPr
           </div>
         ))}
       </div>
+      )}
       
       <div className="mt-8 pt-6 border-t border-gray-200 text-center">
         <p className="text-gray-600">

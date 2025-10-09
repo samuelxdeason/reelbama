@@ -13,6 +13,8 @@ interface TournamentScheduleProps {
 }
 
 export default function TournamentSchedule({ title, items }: TournamentScheduleProps) {
+  const hasContent = items && items.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8 flex flex-col h-full">
       {/* Section Header */}
@@ -34,6 +36,15 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
         </a>
       </div>
       
+      {!hasContent ? (
+        <div className="flex-1 flex items-center justify-center py-12">
+          <div className="text-center">
+            <div className="text-6xl mb-4">📅</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No Tournaments Scheduled</h3>
+            <p className="text-gray-600">Check back soon for upcoming tournaments</p>
+          </div>
+        </div>
+      ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 flex-1">
         {items.map((tournament, index) => (
           <article key={index} className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-gold-accent">
@@ -92,6 +103,7 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
           </article>
         ))}
       </div>
+      )}
       
       {/* Submission Call-to-Action */}
       <div className="mt-6 md:mt-8 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-gold-accent">

@@ -11,6 +11,8 @@ interface GuideRegistryProps {
 }
 
 export default function GuideRegistry({ title, guides }: GuideRegistryProps) {
+  const hasContent = guides && guides.length > 0;
+
   return (
     <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8 flex flex-col h-full">
       <div className="flex items-center mb-6 md:mb-8">
@@ -23,6 +25,15 @@ export default function GuideRegistry({ title, guides }: GuideRegistryProps) {
         </div>
       </div>
       
+      {!hasContent ? (
+        <div className="flex-1 flex items-center justify-center py-12">
+          <div className="text-center">
+            <div className="text-6xl mb-4">🚤</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No Guides Listed</h3>
+            <p className="text-gray-600">Check back soon for professional fishing guides</p>
+          </div>
+        </div>
+      ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
         {guides.map((guide, index) => (
           <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-lake-green">
@@ -102,6 +113,7 @@ export default function GuideRegistry({ title, guides }: GuideRegistryProps) {
           </div>
         ))}
       </div>
+      )}
       
       {/* Submission Call-to-Action */}
       <div className="mt-6 md:mt-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-lake-green">

@@ -53,7 +53,7 @@ export default function HeroSection({ title, description, author }: HeroSectionP
           <div className="relative">
             <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-8 h-96 flex items-center justify-center shadow-2xl relative overflow-hidden border-4 border-slate-700">
               <img 
-                src="/assets/images/ai-generated-reelbama-merch.png" 
+                src="/assets/images/metadata-preview-image.png" 
                 alt="Alabama fishing community - ReelBama" 
                 className="absolute inset-0 w-full h-full object-cover opacity-30 rounded-lg"
               />

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     url: "https://reelbama.com",
     images: [
       {
-        url: "/assets/images/ai-generated-reelbama-merch.png",
+        url: "/assets/images/metadata-preview-image.png",
         width: 1200,
         height: 630,
         alt: "Alabama fishing community - ReelBama",

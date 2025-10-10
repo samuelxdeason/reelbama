@@ -17,8 +17,12 @@ export default function Footer({ site }: FooterProps) {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-red-800 rounded-xl flex items-center justify-center mr-4 border-2 border-red-300">
-                <span className="text-white text-xl font-bold">🎣</span>
+              <div className="w-12 h-12 mr-4 flex-shrink-0">
+                <img 
+                  src="/assets/logos/reelbama.png" 
+                  alt="REELBAMA Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <h3 className="text-2xl font-bold font-heading">{site.title}</h3>
             </div>

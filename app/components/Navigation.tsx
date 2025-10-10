@@ -19,8 +19,12 @@ export default function Navigation({ site }: NavigationProps) {
           {/* Logo */}
           <div className="flex items-center min-w-0 flex-1 md:flex-initial">
             <div className="flex-shrink-0 flex items-center gap-2">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-red-700 to-red-800 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white text-lg md:text-xl font-bold">🎣</span>
+              <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                <img 
+                  src="/assets/logos/reelbama.png" 
+                  alt="REELBAMA Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="min-w-0">
                 <h1 className="text-sm md:text-xl font-bold text-alabama-red font-heading truncate">{site.title}</h1>

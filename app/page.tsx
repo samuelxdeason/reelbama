@@ -201,10 +201,10 @@ export default async function Home() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
-              Latest from Our Blog
+              Alabama Fishing Blog - Expert Tips & Lake Reports
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Expert tips, lake reports, and community stories from Alabama&apos;s fishing experts
+              Expert bass fishing tips, Alabama lake reports, and community stories from local fishing experts. Stay updated with the latest fishing conditions across Alabama waters.
             </p>
           </div>
           
@@ -237,10 +237,10 @@ export default async function Home() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
-              Community Highlights
+              Alabama Fishing Community Highlights
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Amazing catches, tournament wins, and community moments from our members
+              Amazing bass catches, fishing tournament wins, and community moments from Alabama anglers. Share your fishing stories and connect with fellow fishermen.
             </p>
           </div>
 
@@ -291,10 +291,10 @@ export default async function Home() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-heading">
-              Fishing Resources
+              Alabama Fishing Resources & Conditions
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Stay updated with current conditions and find the best gear for your next fishing adventure
+              Stay updated with current Alabama fishing conditions, lake reports, and find the best fishing gear for your next Alabama fishing adventure. Expert recommendations for bass fishing equipment.
             </p>
           </div>
 

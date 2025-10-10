@@ -53,8 +53,8 @@ export default function HeroSection({ title, description, author }: HeroSectionP
           <div className="relative">
             <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-8 h-96 flex items-center justify-center shadow-2xl relative overflow-hidden border-4 border-slate-700">
               <img 
-                src="https://vikingfleet.com/wp-content/uploads/sites/4649/2021/11/2024-11-14-Coxes-1.jpg?resize=360%2C240&zoom=2" 
-                alt="Alabama fishing community" 
+                src="/assets/images/ai-generated-reelbama-merch.png" 
+                alt="Alabama fishing community - ReelBama" 
                 className="absolute inset-0 w-full h-full object-cover opacity-30 rounded-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-slate-800/80 rounded-lg"></div>

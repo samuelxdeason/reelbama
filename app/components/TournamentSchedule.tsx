@@ -16,22 +16,22 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
   const hasContent = items && items.length > 0;
 
   return (
-    <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8 flex flex-col h-full">
+    <section className="bg-white rounded-lg shadow-xl border-2 border-slate-300 p-4 md:p-8 flex flex-col h-full">
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8 border-b-2 border-slate-800 pb-4">
         <div className="flex items-center">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-gold-accent to-yellow-600 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
-            <span className="text-xl md:text-2xl">📅</span>
+          <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-md flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+            <span className="text-2xl md:text-3xl">📅</span>
           </div>
           <div className="min-w-0">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
-            <p className="text-gray-600 text-xs md:text-sm">Upcoming fishing tournaments across Alabama</p>
+            <h2 className="text-xl md:text-3xl font-black text-slate-900 font-heading tracking-tight uppercase">{title}</h2>
+            <p className="text-amber-600 text-sm md:text-base font-bold tracking-wide uppercase">Upcoming Tournaments</p>
           </div>
         </div>
-        <a href="#" className="text-alabama-red hover:text-red-800 font-medium text-sm flex items-center whitespace-nowrap ml-auto sm:ml-0">
+        <a href="#" className="text-slate-800 hover:text-amber-600 font-bold text-sm md:text-base flex items-center whitespace-nowrap ml-auto sm:ml-0 uppercase border-b-2 border-transparent hover:border-amber-600 transition-all">
           Full Schedule
           <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </a>
       </div>
@@ -40,21 +40,21 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
         <div className="flex-1 flex items-center justify-center py-12">
           <div className="text-center">
             <div className="text-6xl mb-4">📅</div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">No Tournaments Scheduled</h3>
-            <p className="text-gray-600">Check back soon for upcoming tournaments</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">No Tournaments Scheduled</h3>
+            <p className="text-slate-600 font-medium">Check back soon for upcoming tournaments</p>
           </div>
         </div>
       ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 flex-1">
         {items.map((tournament, index) => (
-          <article key={index} className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-gold-accent">
+          <article key={index} className="group bg-gray-50 rounded-lg p-4 md:p-6 hover:shadow-2xl transition-all duration-300 border-2 border-slate-300 hover:border-amber-600">
             <div className="flex flex-col gap-3">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-gold-accent text-gray-900 text-xs font-bold px-2 py-1 rounded-full flex-shrink-0">UPCOMING</span>
+                    <span className="bg-amber-500 text-white text-xs font-black px-3 py-1 rounded-md flex-shrink-0 uppercase tracking-wide border-2 border-amber-600">UPCOMING</span>
                   </div>
-                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 break-words">{tournament.name}</h3>
+                  <h3 className="text-base md:text-lg font-black text-slate-900 mb-3 break-words tracking-tight">{tournament.name}</h3>
                 </div>
                 <div className="text-3xl flex-shrink-0">🏆</div>
               </div>
@@ -90,10 +90,10 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
                 </div>
               </div>
               
-              <div className="pt-3 border-t border-gray-300 mt-2">
+              <div className="pt-3 border-t-2 border-slate-300 mt-2">
                 <a 
                   href={`mailto:${tournament.contact}`}
-                  className="bg-gold-accent hover:bg-yellow-600 text-gray-900 font-semibold text-xs md:text-sm px-4 py-2 rounded-lg transition-colors duration-300 inline-flex items-center justify-center w-full"
+                  className="bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs md:text-sm px-4 py-3 rounded-md transition-colors duration-300 inline-flex items-center justify-center w-full shadow-lg uppercase tracking-wide"
                 >
                   <span className="mr-2">📧</span>
                   Contact Organizer
@@ -106,16 +106,16 @@ export default function TournamentSchedule({ title, items }: TournamentScheduleP
       )}
       
       {/* Submission Call-to-Action */}
-      <div className="mt-6 md:mt-8 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-gold-accent">
+      <div className="mt-6 md:mt-8 bg-amber-50 rounded-lg p-4 md:p-6 border-2 border-dashed border-amber-600">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0 text-2xl md:text-3xl">📋</div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Add Your Tournament</h3>
-            <p className="text-sm md:text-base text-gray-700 mb-3">
+            <h3 className="text-base md:text-lg font-black text-slate-900 mb-2 uppercase tracking-tight">Add Your Tournament</h3>
+            <p className="text-sm md:text-base text-slate-700 mb-3 font-medium">
               If you&apos;re planning a tournament, let us know at{' '}
               <a 
                 href="mailto:schedule@reelbama.com" 
-                className="text-sunset-orange hover:text-orange-700 font-semibold underline"
+                className="text-amber-700 hover:text-amber-800 font-bold underline"
               >
                 schedule@reelbama.com
               </a>

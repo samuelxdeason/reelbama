@@ -184,7 +184,7 @@ export default async function Home() {
   } : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50 overflow-visible">
       {/* Navigation */}
       <Navigation site={site} />
 
@@ -196,7 +196,7 @@ export default async function Home() {
       />
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 overflow-x-hidden">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Featured Blog Section */}
         <section className="mb-16">
           <div className="text-center mb-12">

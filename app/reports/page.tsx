@@ -16,17 +16,17 @@ export default async function ReportsPage() {
       }} />
 
       {/* Header */}
-      <div className="bg-gradient-to-br from-white via-blue-50 to-red-50 py-12 md:py-16">
+      <div className="bg-gradient-to-br from-gray-50 via-white to-amber-50 py-12 md:py-16 border-b-4 border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 shadow-lg border border-gray-200">
+            <div className="inline-flex items-center bg-amber-100 backdrop-blur-sm rounded-md px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 shadow-lg border-2 border-amber-200">
               <span className="text-xl md:text-2xl mr-2 md:mr-3">📋</span>
-              <span className="text-sm md:text-lg font-medium text-alabama-red">All Fishing Reports</span>
+              <span className="text-sm md:text-lg font-black text-amber-700 uppercase tracking-wider">All Fishing Reports</span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 font-heading">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-3 md:mb-4 font-heading tracking-tight">
               Alabama Fishing Reports
             </h1>
-            <p className="text-base md:text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-slate-700 max-w-2xl mx-auto font-semibold">
               Latest reports from anglers across Alabama&apos;s best fishing lakes and rivers.
             </p>
           </div>

@@ -13,35 +13,35 @@ export default function ImportantCalendar({ title, events }: ImportantCalendarPr
   const hasContent = events && events.length > 0;
 
   return (
-    <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
-      <div className="flex items-center mb-6 md:mb-8">
-        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-community-blue to-blue-800 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
-          <span className="text-xl md:text-2xl">📅</span>
+    <section className="bg-white rounded-lg shadow-xl border-2 border-slate-300 p-4 md:p-8">
+      <div className="flex items-center mb-6 md:mb-8 border-b-2 border-slate-800 pb-4">
+        <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-md flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+          <span className="text-2xl md:text-3xl">📅</span>
         </div>
         <div className="min-w-0">
-          <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
-          <p className="text-gray-600 text-xs md:text-sm">Upcoming fishing events and tournaments in Alabama</p>
+          <h2 className="text-xl md:text-3xl font-black text-slate-900 font-heading tracking-tight uppercase">{title}</h2>
+          <p className="text-amber-600 text-sm md:text-base font-bold tracking-wide uppercase">Upcoming Events & Tournaments</p>
         </div>
       </div>
       
       {!hasContent ? (
         <div className="text-center py-16">
           <div className="text-6xl mb-4">📅</div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">No Events Scheduled</h3>
-          <p className="text-gray-600">Check back soon for upcoming events</p>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">No Events Scheduled</h3>
+          <p className="text-slate-600 font-medium">Check back soon for upcoming events</p>
         </div>
       ) : (
       <div className="space-y-4">
         {events.map((event, index) => (
-          <div key={index} className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 md:p-6 bg-gradient-to-r from-blue-50 to-sky-50 rounded-lg border border-gray-200 hover:shadow-md hover:border-community-blue transition-all duration-300">
+          <div key={index} className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 md:p-6 bg-gray-50 rounded-lg border-2 border-slate-300 hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
             <div className="flex items-center gap-4 flex-1 min-w-0">
               <div className="flex-shrink-0">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-community-blue rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-800 rounded-md flex items-center justify-center shadow-lg border-2 border-amber-500">
                   <div className="text-white text-center">
-                    <div className="text-xs md:text-sm font-bold">
+                    <div className="text-xs md:text-sm font-black uppercase">
                       {new Date(event.date).toLocaleDateString('en-US', { month: 'short' })}
                     </div>
-                    <div className="text-base md:text-lg font-bold">
+                    <div className="text-base md:text-lg font-black">
                       {new Date(event.date).getDate()}
                     </div>
                   </div>
@@ -49,12 +49,12 @@ export default function ImportantCalendar({ title, events }: ImportantCalendarPr
               </div>
               
               <div className="flex-1 min-w-0">
-                <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1">{event.title}</h3>
-                <p className="text-sm md:text-base text-gray-600 flex items-center">
+                <h3 className="text-base md:text-xl font-black text-slate-900 mb-1 tracking-tight">{event.title}</h3>
+                <p className="text-sm md:text-base text-slate-700 flex items-center font-semibold">
                   <span className="mr-2">📍</span>
                   <span className="truncate">{event.location}</span>
                 </p>
-                <p className="text-xs md:text-sm text-community-blue mt-1 font-medium">
+                <p className="text-xs md:text-sm text-amber-600 mt-1 font-bold uppercase tracking-wide">
                   {new Date(event.date).toLocaleDateString('en-US', { 
                     weekday: 'long', 
                     year: 'numeric', 
@@ -66,7 +66,7 @@ export default function ImportantCalendar({ title, events }: ImportantCalendarPr
             </div>
             
             <div className="flex-shrink-0 w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-community-blue hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-xs md:text-sm font-medium transition-colors duration-300 shadow-md whitespace-nowrap">
+              <button className="w-full sm:w-auto bg-slate-800 hover:bg-slate-900 text-white px-4 py-3 rounded-md text-xs md:text-sm font-bold transition-colors duration-300 shadow-lg whitespace-nowrap uppercase tracking-wide">
                 Add to Calendar
               </button>
             </div>
@@ -75,8 +75,8 @@ export default function ImportantCalendar({ title, events }: ImportantCalendarPr
       </div>
       )}
       
-      <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-        <p className="text-gray-600">
+      <div className="mt-8 pt-6 border-t-2 border-slate-300 text-center">
+        <p className="text-slate-700 font-semibold">
           Stay updated with all Alabama fishing events and tournaments
         </p>
       </div>

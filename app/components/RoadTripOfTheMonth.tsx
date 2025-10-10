@@ -16,47 +16,47 @@ export default function RoadTripOfTheMonth({ title, article }: RoadTripOfTheMont
 
   if (!hasContent) {
     return (
-      <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8">
-        <div className="flex items-center mb-6 md:mb-8">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-sunset-orange to-red-700 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
-            <span className="text-xl md:text-2xl">🗺️</span>
+      <section className="bg-white rounded-lg shadow-xl border-2 border-slate-300 p-4 md:p-8">
+        <div className="flex items-center mb-6 md:mb-8 border-b-2 border-slate-800 pb-4">
+          <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-md flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+            <span className="text-2xl md:text-3xl">🗺️</span>
           </div>
           <div className="min-w-0">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
-            <p className="text-gray-600 text-xs md:text-sm">Monthly featured destination</p>
+            <h2 className="text-xl md:text-3xl font-black text-slate-900 font-heading tracking-tight uppercase">{title}</h2>
+            <p className="text-amber-600 text-sm md:text-base font-bold tracking-wide uppercase">Monthly Featured Destination</p>
           </div>
         </div>
         <div className="text-center py-16">
           <div className="text-6xl mb-4">🗺️</div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">No Road Trip Featured</h3>
-          <p className="text-gray-600">Check back soon for fishing destination articles</p>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">No Road Trip Featured</h3>
+          <p className="text-slate-600 font-medium">Check back soon for fishing destination articles</p>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 md:p-8">
+    <section className="bg-white rounded-lg shadow-xl border-2 border-slate-300 p-4 md:p-8">
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8 border-b-2 border-slate-800 pb-4">
         <div className="flex items-center min-w-0">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blog-accent to-purple-800 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
-            <span className="text-xl md:text-2xl">🗺️</span>
+          <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-md flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+            <span className="text-2xl md:text-3xl">🗺️</span>
           </div>
           <div className="min-w-0">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
-            <p className="text-gray-600 text-xs md:text-sm">Featured fishing destinations and road trip guides</p>
+            <h2 className="text-xl md:text-3xl font-black text-slate-900 font-heading tracking-tight uppercase">{title}</h2>
+            <p className="text-amber-600 text-sm md:text-base font-bold tracking-wide uppercase">Featured Destinations & Guides</p>
           </div>
         </div>
-        <a href="#" className="text-blog-accent hover:text-purple-900 font-medium text-sm flex items-center whitespace-nowrap ml-auto sm:ml-0">
+        <a href="#" className="text-slate-800 hover:text-amber-600 font-bold text-sm md:text-base flex items-center whitespace-nowrap ml-auto sm:ml-0 uppercase border-b-2 border-transparent hover:border-amber-600 transition-all">
           All Stories
           <svg className="ml-1 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </a>
       </div>
       
-      <article className="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-blog-accent">
+      <article className="group bg-gray-50 rounded-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-slate-300 hover:border-amber-600">
         <div className="relative">
           {/* Hero image - no cropping, maintain aspect ratio */}
           <img 
@@ -66,26 +66,26 @@ export default function RoadTripOfTheMonth({ title, article }: RoadTripOfTheMont
           />
           
           {/* Featured badge */}
-          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg border border-blog-accent">
-            <span className="text-sm font-bold text-blog-accent">Featured Story</span>
+          <div className="absolute top-4 left-4 bg-amber-500 backdrop-blur-sm rounded-md px-4 py-2 shadow-xl border-2 border-white">
+            <span className="text-sm md:text-base font-black text-white uppercase tracking-wider">Featured Story</span>
           </div>
         </div>
         
         <div className="p-4 md:p-8">
           <div className="flex items-center mb-3 md:mb-4">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blog-accent to-purple-800 rounded-full flex items-center justify-center mr-2 md:mr-3 shadow-lg flex-shrink-0">
-              <span className="text-white text-xs md:text-sm font-bold">BB</span>
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-amber-500 rounded flex items-center justify-center mr-3 shadow-lg flex-shrink-0 border-2 border-amber-600">
+              <span className="text-white text-sm md:text-base font-black">BB</span>
             </div>
             <div className="min-w-0">
-              <p className="text-xs md:text-sm font-medium text-gray-900 truncate">By {article.author}</p>
-              <p className="text-[10px] md:text-xs text-gray-500">{article.publishedDate}</p>
+              <p className="text-xs md:text-sm font-bold text-slate-900 truncate uppercase tracking-wide">By {article.author}</p>
+              <p className="text-xs md:text-sm text-amber-600 font-semibold">{article.publishedDate}</p>
             </div>
           </div>
           
-          <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-blog-accent transition-colors">{article.title}</h3>
+          <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-3 md:mb-4 group-hover:text-amber-700 transition-colors tracking-tight">{article.title}</h3>
           
           <div className="prose prose-sm md:prose-lg max-w-none mb-4 md:mb-6">
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm md:text-lg text-slate-700 leading-relaxed font-medium">
               The Black Warrior River offers pristine fishing spots, cozy camping, and plenty of smallmouth bass waiting to bite. 
               Here&apos;s our full trip log and recommendations for this hidden Alabama gem...
             </p>
@@ -93,18 +93,18 @@ export default function RoadTripOfTheMonth({ title, article }: RoadTripOfTheMont
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="bg-blog-accent/10 text-blog-accent px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium border border-blog-accent/20 whitespace-nowrap">
+              <span className="bg-amber-100 text-amber-700 px-3 md:px-4 py-2 rounded-md text-xs md:text-sm font-bold border-2 border-amber-200 whitespace-nowrap uppercase tracking-wide">
                 🏞️ Road Trip
               </span>
-              <span className="bg-lake-green/10 text-lake-green px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium border border-lake-green/20 whitespace-nowrap">
+              <span className="bg-emerald-100 text-emerald-700 px-3 md:px-4 py-2 rounded-md text-xs md:text-sm font-bold border-2 border-emerald-200 whitespace-nowrap uppercase tracking-wide">
                 🎣 Smallmouth Bass
               </span>
             </div>
             
-            <button className="bg-blog-accent hover:bg-purple-800 text-white font-semibold py-2 px-4 md:px-6 rounded-lg transition-colors duration-300 flex items-center shadow-md text-sm whitespace-nowrap w-full sm:w-auto justify-center">
+            <button className="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 md:px-8 rounded-md transition-colors duration-300 flex items-center shadow-lg text-sm md:text-base whitespace-nowrap w-full sm:w-auto justify-center uppercase tracking-wider">
               Read Full Story
               <svg className="ml-2 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>

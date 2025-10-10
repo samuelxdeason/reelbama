@@ -127,6 +127,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Allow navigation dropdowns to overflow */
+nav, nav * {
+  overflow: visible !important;
+}
+
 /* Custom utility classes for the fishing theme */
 .font-heading {
   font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif;
@@ -281,9 +286,15 @@ html, body {
 }
 
 /* Ensure all sections respect viewport width */
-section, main, article, aside, header, footer, nav {
+section, main, article, aside, header, footer {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+/* Navigation can overflow for dropdowns */
+nav {
+  max-width: 100vw;
+  overflow: visible;
 }
 
 /* Modal animations */

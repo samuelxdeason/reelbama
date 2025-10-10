@@ -18,22 +18,22 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
   const hasContent = displayItems && displayItems.length > 0;
   
   return (
-    <section className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 md:p-8 flex flex-col h-full">
+    <section className="bg-white rounded-lg shadow-xl border-2 border-slate-300 p-4 md:p-8 flex flex-col h-full">
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 md:mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 md:mb-6 border-b-2 border-slate-800 pb-4">
         <div className="flex items-center min-w-0">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-alabama-red to-red-800 rounded-xl flex items-center justify-center mr-3 shadow-lg flex-shrink-0">
-            <span className="text-xl md:text-2xl">🏆</span>
+          <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-800 rounded-md flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+            <span className="text-2xl md:text-3xl">🏆</span>
           </div>
           <div className="min-w-0">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-900 font-heading">{title}</h2>
-            <p className="text-gray-600 text-xs md:text-sm">Latest impressive catches from Alabama waters</p>
+            <h2 className="text-xl md:text-3xl font-black text-slate-900 font-heading tracking-tight uppercase">{title}</h2>
+            <p className="text-amber-600 text-sm md:text-base font-bold tracking-wide uppercase">Latest Impressive Catches</p>
           </div>
         </div>
-        <a href="#" className="text-alabama-red hover:text-red-800 font-medium text-sm flex items-center whitespace-nowrap ml-auto sm:ml-0">
+        <a href="#" className="text-slate-800 hover:text-amber-600 font-bold text-sm md:text-base flex items-center whitespace-nowrap ml-auto sm:ml-0 uppercase border-b-2 border-transparent hover:border-amber-600 transition-all">
           View All
           <svg className="ml-1 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </a>
       </div>
@@ -43,8 +43,8 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
         <div className="flex-1 flex items-center justify-center min-h-[400px] md:min-h-[500px]">
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🎣</div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">No Catches Yet</h3>
-            <p className="text-gray-600">Be the first to submit your catch!</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">No Catches Yet</h3>
+            <p className="text-slate-600 font-medium">Be the first to submit your catch!</p>
           </div>
         </div>
       ) : (
@@ -52,7 +52,7 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
         {displayItems.map((catchItem, index) => (
           <article 
             key={index} 
-            className="group rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-alabama-red relative transform hover:-translate-y-1 min-h-[180px] md:min-h-0"
+            className="group rounded-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-slate-300 hover:border-amber-600 relative transform hover:-translate-y-1 min-h-[180px] md:min-h-0"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200">
               <img 
@@ -62,8 +62,8 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
               />
               
               {/* Weight badge - top right */}
-              <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-white/95 backdrop-blur-sm rounded-full px-2 py-1 md:px-3 md:py-1.5 shadow-lg border-2 border-alabama-red">
-                <span className="text-xs md:text-sm font-bold text-alabama-red">{catchItem.weightLbs} lbs</span>
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 bg-amber-500 backdrop-blur-sm rounded-md px-2 py-1 md:px-3 md:py-1.5 shadow-xl border-2 border-white">
+                <span className="text-xs md:text-sm font-black text-white uppercase tracking-wide">{catchItem.weightLbs} lbs</span>
               </div>
               
               {/* Info overlay at bottom with gradient */}
@@ -88,16 +88,16 @@ export default function CatchOfTheWeek({ title, items }: CatchOfTheWeekProps) {
       )}
       
       {/* Submission Call-to-Action */}
-      <div className="mt-4 md:mt-6 bg-gradient-to-br from-blue-50 to-red-50 rounded-xl p-4 md:p-6 border-2 border-dashed border-alabama-red">
+      <div className="mt-4 md:mt-6 bg-amber-50 rounded-lg p-4 md:p-6 border-2 border-dashed border-amber-600">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0 text-2xl md:text-3xl">📸</div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Submit Your Catch!</h3>
-            <p className="text-sm md:text-base text-gray-700 mb-3">
+            <h3 className="text-base md:text-lg font-black text-slate-900 mb-2 uppercase tracking-tight">Submit Your Catch!</h3>
+            <p className="text-sm md:text-base text-slate-700 mb-3 font-medium">
               We want to see your best fish photos. Email them to us at{' '}
               <a 
                 href="mailto:topcatch@reelbama.com" 
-                className="text-alabama-red hover:text-red-800 font-semibold underline"
+                className="text-amber-700 hover:text-amber-800 font-bold underline"
               >
                 topcatch@reelbama.com
               </a>

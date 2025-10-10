@@ -15,7 +15,7 @@ interface PodcastEpisode {
 
 function EpisodeCard({ episode, onClick }: { episode: PodcastEpisode, onClick: () => void }) {
   return (
-    <article className="bg-white rounded-xl md:rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+    <article className="bg-white rounded-lg shadow-lg border-2 border-slate-300 overflow-hidden hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
       {/* YouTube Thumbnail */}
       <div 
         className="relative aspect-video bg-gray-200 cursor-pointer"
@@ -28,7 +28,7 @@ function EpisodeCard({ episode, onClick }: { episode: PodcastEpisode, onClick: (
         />
         {/* Play icon overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors">
-          <div className="w-12 h-12 md:w-16 md:h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform">
+          <div className="w-12 h-12 md:w-16 md:h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl transform hover:scale-110 transition-transform border-2 border-white">
             <svg className="w-4 h-4 md:w-6 md:h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z"/>
             </svg>
@@ -38,17 +38,17 @@ function EpisodeCard({ episode, onClick }: { episode: PodcastEpisode, onClick: (
       
       <div className="p-3 md:p-6">
         <h3 
-          className="text-base md:text-xl font-bold text-gray-900 mb-2 md:mb-3 line-clamp-2 cursor-pointer hover:text-sunset-orange transition-colors"
+          className="text-base md:text-xl font-black text-slate-900 mb-2 md:mb-3 line-clamp-2 cursor-pointer hover:text-amber-700 transition-colors tracking-tight"
           onClick={onClick}
         >
           {episode.title}
         </h3>
-        <p className="text-gray-600 mb-3 md:mb-4 line-clamp-3 md:line-clamp-4 text-sm md:text-base">{episode.description}</p>
+        <p className="text-slate-600 mb-3 md:mb-4 line-clamp-3 md:line-clamp-4 text-sm md:text-base font-medium">{episode.description}</p>
         <div className="flex items-center justify-between">
-          <p className="text-sunset-orange font-medium text-xs md:text-sm">{episode.date}</p>
+          <p className="text-amber-600 font-bold text-xs md:text-sm uppercase tracking-wide">{episode.date}</p>
           <button
             onClick={onClick}
-            className="bg-red-600 hover:bg-red-700 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-lg transition-colors duration-300 text-xs md:text-sm font-semibold flex items-center gap-1 md:gap-2"
+            className="bg-red-600 hover:bg-red-700 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-md transition-colors duration-300 text-xs md:text-sm font-bold flex items-center gap-1 md:gap-2 uppercase tracking-wide shadow-lg"
           >
             <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -88,30 +88,30 @@ function VideoModal({ episode, onClose }: { episode: PodcastEpisode | null, onCl
         <div className="p-4 md:p-6">
           <div className="flex justify-between items-start gap-4 mb-4">
             <div className="flex-1">
-              <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">{episode.title}</h3>
-              <p className="text-gray-600 text-sm md:text-base">{episode.description}</p>
+              <h3 className="text-lg md:text-2xl font-black text-slate-900 mb-2 tracking-tight">{episode.title}</h3>
+              <p className="text-slate-700 text-sm md:text-base font-medium">{episode.description}</p>
             </div>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0"
+              className="text-slate-400 hover:text-slate-700 transition-colors flex-shrink-0"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
           
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-            <p className="text-sunset-orange font-medium text-sm">{episode.date}</p>
+          <div className="flex items-center justify-between pt-4 border-t-2 border-slate-300">
+            <p className="text-amber-600 font-bold text-sm uppercase tracking-wide">{episode.date}</p>
             <a
               href={episode.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-700 font-medium text-sm flex items-center gap-2"
+              className="text-red-600 hover:text-red-700 font-bold text-sm flex items-center gap-2 uppercase tracking-wide"
             >
               Watch on YouTube
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
           </div>
@@ -142,7 +142,7 @@ function EpisodesList({
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="bg-white rounded-xl md:rounded-2xl shadow-lg border border-gray-200 overflow-hidden animate-pulse">
+          <div key={i} className="bg-white rounded-lg shadow-lg border-2 border-slate-300 overflow-hidden animate-pulse">
             <div className="aspect-video bg-gray-300"></div>
             <div className="p-3 md:p-6">
               <div className="h-5 md:h-6 bg-gray-300 rounded w-3/4 mb-2 md:mb-3"></div>
@@ -163,16 +163,16 @@ function EpisodesList({
     return (
       <div className="text-center py-16">
         <div className="text-6xl mb-4">🎙️</div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
+        <h3 className="text-xl font-bold text-slate-900 mb-2">
           {error ? 'Unable to Load Episodes' : 'No Episodes Available'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-slate-600 font-medium">
           {error ? 'Please check your internet connection and try again.' : 'Check back soon for new podcast episodes!'}
         </p>
         {error && (
           <button 
             onClick={() => window.location.reload()} 
-            className="mt-4 bg-alabama-red hover:bg-red-800 text-white px-6 py-2 rounded-lg transition-colors"
+            className="mt-4 bg-slate-800 hover:bg-slate-900 text-white px-6 py-2 rounded-md transition-colors font-bold uppercase tracking-wide shadow-lg"
           >
             Try Again
           </button>
@@ -198,7 +198,7 @@ function EpisodesList({
           <button
             onClick={onLoadMore}
             disabled={loadingMore}
-            className="bg-sunset-orange hover:bg-orange-700 disabled:bg-gray-400 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center gap-2 mx-auto text-sm md:text-base"
+            className="bg-slate-800 hover:bg-slate-900 disabled:bg-gray-400 text-white px-6 md:px-8 py-3 md:py-4 rounded-md font-black transition-colors duration-300 flex items-center gap-2 mx-auto text-sm md:text-base uppercase tracking-wider shadow-lg"
           >
             {loadingMore ? (
               <>
@@ -212,12 +212,12 @@ function EpisodesList({
               <>
                 View More Episodes
                 <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </>
             )}
           </button>
-          <p className="text-gray-500 text-xs md:text-sm mt-2 md:mt-3">
+          <p className="text-slate-600 text-xs md:text-sm mt-2 md:mt-3 font-semibold">
             Showing {episodes.length} of {episodes.length} episodes
           </p>
         </div>
@@ -283,17 +283,17 @@ export default function PodcastsPage() {
       }} />
 
       {/* Header */}
-      <div className="bg-gradient-to-br from-white via-blue-50 to-red-50 py-12 md:py-16">
+      <div className="bg-gradient-to-br from-gray-50 via-white to-amber-50 py-12 md:py-16 border-b-4 border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 shadow-lg border border-gray-200">
+            <div className="inline-flex items-center bg-amber-100 backdrop-blur-sm rounded-md px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6 shadow-lg border-2 border-amber-200">
               <span className="text-xl md:text-2xl mr-2 md:mr-3">🎙️</span>
-              <span className="text-sm md:text-lg font-medium text-alabama-red">All Podcast Episodes</span>
+              <span className="text-sm md:text-lg font-black text-amber-700 uppercase tracking-wider">All Podcast Episodes</span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 font-heading">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-3 md:mb-4 font-heading tracking-tight">
               ReelBama Podcast
             </h1>
-            <p className="text-base md:text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-slate-700 max-w-2xl mx-auto font-semibold">
               Listen to our complete collection of fishing podcasts featuring expert tips, lake reports, and community stories.
             </p>
           </div>
